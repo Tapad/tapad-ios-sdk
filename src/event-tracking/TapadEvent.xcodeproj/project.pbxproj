@@ -1,0 +1,294 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		230D1420141FF8A000E770B0 /* OpenUDID.h in Headers */ = {isa = PBXBuildFile; fileRef = 230D141E141FF8A000E770B0 /* OpenUDID.h */; };
+		230D1421141FF8A000E770B0 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 230D141F141FF8A000E770B0 /* OpenUDID.m */; };
+		230F9800141FEEAD001936EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 230F97FF141FEEAD001936EC /* Foundation.framework */; };
+		2395C3A7141FF07F00EF4895 /* NSData+MD5.h in Headers */ = {isa = PBXBuildFile; fileRef = 2395C39C141FF07F00EF4895 /* NSData+MD5.h */; };
+		2395C3A8141FF07F00EF4895 /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395C39D141FF07F00EF4895 /* NSData+MD5.m */; };
+		2395C3A9141FF07F00EF4895 /* NSString+MD5.h in Headers */ = {isa = PBXBuildFile; fileRef = 2395C39E141FF07F00EF4895 /* NSString+MD5.h */; };
+		2395C3AA141FF07F00EF4895 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395C39F141FF07F00EF4895 /* NSString+MD5.m */; };
+		2395C3AC141FF07F00EF4895 /* TapadEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 2395C3A1141FF07F00EF4895 /* TapadEvent.h */; };
+		2395C3AD141FF07F00EF4895 /* TapadEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395C3A2141FF07F00EF4895 /* TapadEvent.m */; };
+		2395C3AE141FF07F00EF4895 /* TapadPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = 2395C3A3141FF07F00EF4895 /* TapadPreferences.h */; };
+		2395C3AF141FF07F00EF4895 /* TapadPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395C3A4141FF07F00EF4895 /* TapadPreferences.m */; };
+		2395C3B0141FF07F00EF4895 /* TapadRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 2395C3A5141FF07F00EF4895 /* TapadRequest.h */; };
+		2395C3B1141FF07F00EF4895 /* TapadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395C3A6141FF07F00EF4895 /* TapadRequest.m */; };
+		2395C3B6141FF15E00EF4895 /* TapadEvent-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2395C3B5141FF15E00EF4895 /* TapadEvent-Prefix.pch */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		230D141E141FF8A000E770B0 /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
+		230D141F141FF8A000E770B0 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
+		230F97FC141FEEAD001936EC /* libTapadEvent.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTapadEvent.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		230F97FF141FEEAD001936EC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2395C39C141FF07F00EF4895 /* NSData+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MD5.h"; sourceTree = "<group>"; };
+		2395C39D141FF07F00EF4895 /* NSData+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MD5.m"; sourceTree = "<group>"; };
+		2395C39E141FF07F00EF4895 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		2395C39F141FF07F00EF4895 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		2395C3A1141FF07F00EF4895 /* TapadEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapadEvent.h; sourceTree = "<group>"; };
+		2395C3A2141FF07F00EF4895 /* TapadEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapadEvent.m; sourceTree = "<group>"; };
+		2395C3A3141FF07F00EF4895 /* TapadPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapadPreferences.h; sourceTree = "<group>"; };
+		2395C3A4141FF07F00EF4895 /* TapadPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapadPreferences.m; sourceTree = "<group>"; };
+		2395C3A5141FF07F00EF4895 /* TapadRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapadRequest.h; sourceTree = "<group>"; };
+		2395C3A6141FF07F00EF4895 /* TapadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapadRequest.m; sourceTree = "<group>"; };
+		2395C3B5141FF15E00EF4895 /* TapadEvent-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TapadEvent-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		230F97F9141FEEAD001936EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				230F9800141FEEAD001936EC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		230D141D141FF8A000E770B0 /* OpenUDID */ = {
+			isa = PBXGroup;
+			children = (
+				230D141E141FF8A000E770B0 /* OpenUDID.h */,
+				230D141F141FF8A000E770B0 /* OpenUDID.m */,
+			);
+			path = OpenUDID;
+			sourceTree = "<group>";
+		};
+		230F97F1141FEEAD001936EC = {
+			isa = PBXGroup;
+			children = (
+				23A4D00114212E15006ADF52 /* TapadEvent */,
+				230F97FE141FEEAD001936EC /* Frameworks */,
+				230F97FD141FEEAD001936EC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		230F97FD141FEEAD001936EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				230F97FC141FEEAD001936EC /* libTapadEvent.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		230F97FE141FEEAD001936EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				230F97FF141FEEAD001936EC /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		23561CF814212EB00090FA71 /* TapadEvent */ = {
+			isa = PBXGroup;
+			children = (
+				2395C39E141FF07F00EF4895 /* NSString+MD5.h */,
+				2395C39F141FF07F00EF4895 /* NSString+MD5.m */,
+				2395C3A1141FF07F00EF4895 /* TapadEvent.h */,
+				2395C3A2141FF07F00EF4895 /* TapadEvent.m */,
+				2395C3A3141FF07F00EF4895 /* TapadPreferences.h */,
+				2395C3A4141FF07F00EF4895 /* TapadPreferences.m */,
+				2395C3A5141FF07F00EF4895 /* TapadRequest.h */,
+				2395C3A6141FF07F00EF4895 /* TapadRequest.m */,
+			);
+			name = TapadEvent;
+			sourceTree = "<group>";
+		};
+		2395C3B4141FF14200EF4895 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		23A4D00114212E15006ADF52 /* TapadEvent */ = {
+			isa = PBXGroup;
+			children = (
+				23561CF814212EB00090FA71 /* TapadEvent */,
+				230D141D141FF8A000E770B0 /* OpenUDID */,
+				2395C3B4141FF14200EF4895 /* Support Files */,
+				2395C3B5141FF15E00EF4895 /* TapadEvent-Prefix.pch */,
+			);
+			name = TapadEvent;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		230F97FA141FEEAD001936EC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2395C3A7141FF07F00EF4895 /* NSData+MD5.h in Headers */,
+				2395C3A9141FF07F00EF4895 /* NSString+MD5.h in Headers */,
+				2395C3AC141FF07F00EF4895 /* TapadEvent.h in Headers */,
+				2395C3AE141FF07F00EF4895 /* TapadPreferences.h in Headers */,
+				2395C3B0141FF07F00EF4895 /* TapadRequest.h in Headers */,
+				2395C3B6141FF15E00EF4895 /* TapadEvent-Prefix.pch in Headers */,
+				230D1420141FF8A000E770B0 /* OpenUDID.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		230F97FB141FEEAD001936EC /* TapadEvent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 230F9809141FEEAD001936EC /* Build configuration list for PBXNativeTarget "TapadEvent" */;
+			buildPhases = (
+				230F97F8141FEEAD001936EC /* Sources */,
+				230F97F9141FEEAD001936EC /* Frameworks */,
+				230F97FA141FEEAD001936EC /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TapadEvent;
+			productName = TapadEvent;
+			productReference = 230F97FC141FEEAD001936EC /* libTapadEvent.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		230F97F3141FEEAD001936EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 230F97F6141FEEAD001936EC /* Build configuration list for PBXProject "TapadEvent" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 230F97F1141FEEAD001936EC;
+			productRefGroup = 230F97FD141FEEAD001936EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				230F97FB141FEEAD001936EC /* TapadEvent */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		230F97F8141FEEAD001936EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2395C3A8141FF07F00EF4895 /* NSData+MD5.m in Sources */,
+				2395C3AA141FF07F00EF4895 /* NSString+MD5.m in Sources */,
+				2395C3AD141FF07F00EF4895 /* TapadEvent.m in Sources */,
+				2395C3AF141FF07F00EF4895 /* TapadPreferences.m in Sources */,
+				2395C3B1141FF07F00EF4895 /* TapadRequest.m in Sources */,
+				230D1421141FF8A000E770B0 /* OpenUDID.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		230F9807141FEEAD001936EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		230F9808141FEEAD001936EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		230F980A141FEEAD001936EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/TapadEvent.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TapadEvent-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		230F980B141FEEAD001936EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/TapadEvent.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TapadEvent-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		230F97F6141FEEAD001936EC /* Build configuration list for PBXProject "TapadEvent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				230F9807141FEEAD001936EC /* Debug */,
+				230F9808141FEEAD001936EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		230F9809141FEEAD001936EC /* Build configuration list for PBXNativeTarget "TapadEvent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				230F980A141FEEAD001936EC /* Debug */,
+				230F980B141FEEAD001936EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 230F97F3141FEEAD001936EC /* Project object */;
+}

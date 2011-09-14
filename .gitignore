@@ -1,0 +1,10 @@
+.DS_Store
+*.swp
+*~.nib
+
+build/
+
+project.xcworkspace/
+*.pbxuser
+xcuserdata
+*~
