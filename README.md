@@ -91,7 +91,7 @@ In the appropriate location, add the following code:
 
 Where _eventName_ is the event type string you wish to track.
 
-Caveats
--------
+Disabling ARC Support
+---------------------
 
-The projects were created with Xcode (4.2) with ARC enabled. Though this makes the code slightly cleaner, it will cause leakage and improper retention when compiled without ARC support. A non-ARC version of the SDK will be added shortly.
+If your Xcode project is compiling without ARC support, please take a look at the non-ARC version of the SDK and DemoApp as provided in src/non-arc.  All usages described above remain the same.
