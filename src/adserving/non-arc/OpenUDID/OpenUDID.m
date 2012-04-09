@@ -100,21 +100,6 @@ static int const kOpenUDIDRedundancySlots = 100;
     
     NSString* _openUDID = nil;
     
-    // One day, this may no longer be allowed in iOS. When that is, just comment this line out.
-    //
-#if TARGET_OS_IPHONE	
-    if([UIDevice instancesRespondToSelector:@selector(uniqueIdentifier)]){
-        _openUDID = [[UIDevice currentDevice] uniqueIdentifier];
-    }
-    
-#endif
-    
-    // Take this opportunity to give the simulator a proper UDID (i.e. nullify UDID and create an OpenUDID)
-    //
-#if TARGET_IPHONE_SIMULATOR
-    _openUDID = nil;
-#endif
-    
     // Next we try to use an alternative method which uses the host name, process ID, and a time stamp
     // We then hash it with md5 to get 32 bytes, and then add 4 extra random bytes
     // Collision is possible of course, but unlikely and suitable for most industry needs (e.g.. aggregate tracking)

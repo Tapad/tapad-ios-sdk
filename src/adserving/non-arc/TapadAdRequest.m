@@ -51,7 +51,7 @@ static NSString*const kadSize        =@"adSize";
 static NSString*const kcontextType   =@"contextType";
 static NSString*const kpublisher     =@"pub";
 static NSString*const kproperty      =@"prop";
-static NSString*const kplacement     =@"placement";
+static NSString*const kplacement     =@"placementId";
 static NSString*const kwrapHtml      =@"wrapHtml";
 
 static const float kTimeout = 2.5;

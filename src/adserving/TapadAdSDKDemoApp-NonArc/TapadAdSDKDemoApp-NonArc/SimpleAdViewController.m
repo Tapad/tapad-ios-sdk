@@ -10,8 +10,15 @@
 #import "TapadAdrequest.h"
 #import "TApadAdSDK.h"
 
+@interface SimpleAdViewController()
+
+@property (retain) UIWebView* htmlAdView;
+
+@end
 
 @implementation SimpleAdViewController
+
+@synthesize htmlAdView;
 
 - (void)viewDidLoad
 {
@@ -22,7 +29,7 @@
                                                  blue:32 / 255.0f
                                                 alpha:1.0];
 
-    UIWebView* htmlAdView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+    htmlAdView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
     htmlAdView.delegate = self;
     [self.view addSubview: htmlAdView];
 
@@ -36,11 +43,18 @@
     [htmlAdView loadRequest:[adRequest getRequest]];
 
     [adRequest release];
-    [htmlAdView release];
+}
+
+- (void)viewWillDisappear
+{
+    if ([htmlAdView isLoading])
+        [htmlAdView stopLoading];
 }
 
 - (void) dealloc
 {
+    [htmlAdView setDelegate:nil];
+    [htmlAdView release];
 	[super dealloc];
 }
 
@@ -86,15 +100,17 @@ navigationType:(UIWebViewNavigationType)navigationType {
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     // beginning of load process
     NSLog(@"webViewDidStartLoad");
-    
+    [self retain];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     // content's already loaded, so we should notify the adwhirl as well as the tapad delegate
-    NSLog(@"webViewDidFinishLoad for URL:%@",[[webView request] URL]);    
+    NSLog(@"webViewDidFinishLoad for URL:%@",[[webView request] URL]);
+    [self release];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     NSLog(@"webView:didFailLoadWithError. URL was [%@] with error: %@",[[webView request]URL], error);
+    [self release];
 }
 @end
