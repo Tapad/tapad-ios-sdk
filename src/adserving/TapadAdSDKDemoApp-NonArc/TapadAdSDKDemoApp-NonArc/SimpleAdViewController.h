@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "TapadAdSDK.h"
 #import "TapadAdRequest.h"
+#import "TapadBannerViewDelegate.h"
 
-@interface SimpleAdViewController : UIViewController
+@interface SimpleAdViewController : UIViewController<TapadBannerViewDelegate>
 
 @end

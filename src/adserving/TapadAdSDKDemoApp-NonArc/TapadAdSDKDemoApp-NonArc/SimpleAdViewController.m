@@ -8,17 +8,18 @@
 
 #import "SimpleAdViewController.h"
 #import "TapadAdrequest.h"
+#import "TapadBannerView.h"
 #import "TApadAdSDK.h"
 
 @interface SimpleAdViewController()
 
-@property (retain) UIWebView* htmlAdView;
+@property (retain) TapadBannerView* bannerView;
 
 @end
 
 @implementation SimpleAdViewController
 
-@synthesize htmlAdView;
+@synthesize bannerView;
 
 - (void)viewDidLoad
 {
@@ -29,9 +30,9 @@
                                                  blue:32 / 255.0f
                                                 alpha:1.0];
 
-    htmlAdView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
-    htmlAdView.delegate = self;
-    [self.view addSubview: htmlAdView];
+    bannerView = [[TapadBannerView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+    bannerView.delegate = self;
+    [self.view addSubview: bannerView];
 
     // Below would be code picked up from Tapad
     TapadAdRequest* adRequest = [TapadAdSDK newAdRequest];                                                                                                                                                                   
@@ -40,77 +41,32 @@
     adRequest.wrapHtml = true; // get rid of the margin
     
     // load the ad!!!
-    [htmlAdView loadRequest:[adRequest getRequest]];
+    [bannerView loadRequest:adRequest];
 
     [adRequest release];
 }
 
-- (void)viewWillDisappear
-{
-    if ([htmlAdView isLoading])
-        [htmlAdView stopLoading];
-}
-
 - (void) dealloc
 {
-    [htmlAdView setDelegate:nil];
-    [htmlAdView release];
+    [bannerView setDelegate:nil];
+    [bannerView release];
 	[super dealloc];
 }
 
-#pragma mark webview delegate
-
-/**
- for reference:
- enum {
- UIWebViewNavigationTypeLinkClicked,
- UIWebViewNavigationTypeFormSubmitted,
- UIWebViewNavigationTypeBackForward,
- UIWebViewNavigationTypeReload,
- UIWebViewNavigationTypeFormResubmitted,
- UIWebViewNavigationTypeOther
- };
- 
- */
-
-
-/** 
- * This callback function, invoked after a click (e.g.), allows us to intercept the start of the loading of the request. We can choose to short-circuit that, 
- * and do something else, like load another application via its registered URL scheme.  This is where an external instance of mobile safari is launched 
- * and screen-swapped.  The same applies to itunes urls, etc.  If in fact an application already exists on the device, and has a URL scheme, then a 
- * link in the ad could even invoke that other application.  Call it app-landing links.  @gpmack 
- */
--(BOOL)webView:(UIWebView *)webView 
-shouldStartLoadWithRequest:(NSURLRequest *)request 
-navigationType:(UIWebViewNavigationType)navigationType {
-    
-    NSLog(@"shouldStartLoadWithRequest [%@]",[request URL]);
-    
-    if (navigationType==UIWebViewNavigationTypeLinkClicked) {
-        NSURL *url = request.URL;
-        [[UIApplication sharedApplication] openURL:url];
-        return NO;
-    } else {
-        return YES; // means go on with normal behavior
-    }
-    
+#pragma mark TapadBannerViewDelegate methods
+-(void)adWillAppear:(TapadBannerView*)view {
+    NSLog(@"ad will appear");
 }
 
-
-- (void)webViewDidStartLoad:(UIWebView *)webView {
-    // beginning of load process
-    NSLog(@"webViewDidStartLoad");
-    [self retain];
+- (void)didReceiveAd:(TapadBannerView *)view {
+    NSLog(@"ad received");
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-    // content's already loaded, so we should notify the adwhirl as well as the tapad delegate
-    NSLog(@"webViewDidFinishLoad for URL:%@",[[webView request] URL]);
-    [self release];
+- (void)didFailToReceiveAd:(TapadBannerView *)view withError:(NSError*)error {
+    NSLog(@"ad failed");
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    NSLog(@"webView:didFailLoadWithError. URL was [%@] with error: %@",[[webView request]URL], error);
-    [self release];
+- (void)willLeaveApplication:(TapadBannerView *)adView {
+    NSLog(@"leaving app");
 }
 @end
