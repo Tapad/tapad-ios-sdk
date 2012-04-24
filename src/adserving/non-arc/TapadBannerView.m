@@ -116,6 +116,9 @@ navigationType:(UIWebViewNavigationType)navigationType {
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     // beginning of load process
     NSLog(@"webViewDidStartLoad");
+    if (self.delegate) {
+        [self.delegate adWillAppear:self];
+    }
     [self retain];
 }
 

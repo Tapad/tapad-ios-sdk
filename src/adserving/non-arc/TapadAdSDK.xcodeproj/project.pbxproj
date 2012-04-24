@@ -250,9 +250,12 @@
 				DSTROOT = /tmp/TapadAdSDK.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TapadAdSDK-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "armv6 armv7 armv7f armv7k i386";
 			};
 			name = Debug;
 		};
@@ -263,9 +266,13 @@
 				DSTROOT = /tmp/TapadAdSDK.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TapadAdSDK-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "armv6 armv7 armv7f armv7k i386";
+				"VALID_ARCHS[sdk=*]" = "armv6 armv7 armv7f armv7k i386";
 			};
 			name = Release;
 		};
