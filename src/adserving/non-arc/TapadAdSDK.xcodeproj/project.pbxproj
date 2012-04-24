@@ -20,9 +20,9 @@
 		239C442B14A38EEE00457C2D /* OpenUDID.h in Headers */ = {isa = PBXBuildFile; fileRef = 239C442914A38EEE00457C2D /* OpenUDID.h */; };
 		239C442C14A38EEE00457C2D /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 239C442A14A38EEE00457C2D /* OpenUDID.m */; };
 		239C442E14A3C96A00457C2D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 239C442D14A3C96A00457C2D /* CoreGraphics.framework */; };
-		23DE26D31545F99500462AA8 /* TapadBannerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 23DE26D11545F99500462AA8 /* TapadBannerView.h */; };
-		23DE26D41545F99500462AA8 /* TapadBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23DE26D21545F99500462AA8 /* TapadBannerView.m */; };
-		23DE26D81545FBE300462AA8 /* TapadBannerViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 23DE26D61545FBE300462AA8 /* TapadBannerViewDelegate.h */; };
+		23EC358E1546632800D302C4 /* TapadBannerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 23EC358B1546632800D302C4 /* TapadBannerView.h */; };
+		23EC358F1546632800D302C4 /* TapadBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EC358C1546632800D302C4 /* TapadBannerView.m */; };
+		23EC35901546632800D302C4 /* TapadBannerViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 23EC358D1546632800D302C4 /* TapadBannerViewDelegate.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,9 +40,9 @@
 		239C442914A38EEE00457C2D /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenUDID.h; path = OpenUDID/OpenUDID.h; sourceTree = SOURCE_ROOT; };
 		239C442A14A38EEE00457C2D /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenUDID.m; path = OpenUDID/OpenUDID.m; sourceTree = SOURCE_ROOT; };
 		239C442D14A3C96A00457C2D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		23DE26D11545F99500462AA8 /* TapadBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapadBannerView.h; sourceTree = "<group>"; };
-		23DE26D21545F99500462AA8 /* TapadBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapadBannerView.m; sourceTree = "<group>"; };
-		23DE26D61545FBE300462AA8 /* TapadBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapadBannerViewDelegate.h; sourceTree = "<group>"; };
+		23EC358B1546632800D302C4 /* TapadBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapadBannerView.h; sourceTree = SOURCE_ROOT; };
+		23EC358C1546632800D302C4 /* TapadBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapadBannerView.m; sourceTree = SOURCE_ROOT; };
+		23EC358D1546632800D302C4 /* TapadBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapadBannerViewDelegate.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +87,9 @@
 		239C440314A3886B00457C2D /* TapadAdSDK */ = {
 			isa = PBXGroup;
 			children = (
+				23EC358B1546632800D302C4 /* TapadBannerView.h */,
+				23EC358C1546632800D302C4 /* TapadBannerView.m */,
+				23EC358D1546632800D302C4 /* TapadBannerViewDelegate.h */,
 				239C442814A38EDC00457C2D /* OpenUDID */,
 				239C442314A38ED500457C2D /* TapadAdRequest.h */,
 				239C442414A38ED500457C2D /* TapadAdRequest.m */,
@@ -97,9 +100,6 @@
 				239C441214A3895E00457C2D /* TapadAdSDK.h */,
 				239C441314A3895E00457C2D /* TapadAdSDK.m */,
 				239C440414A3886B00457C2D /* Supporting Files */,
-				23DE26D11545F99500462AA8 /* TapadBannerView.h */,
-				23DE26D21545F99500462AA8 /* TapadBannerView.m */,
-				23DE26D61545FBE300462AA8 /* TapadBannerViewDelegate.h */,
 			);
 			path = TapadAdSDK;
 			sourceTree = "<group>";
@@ -134,8 +134,8 @@
 				239C441E14A3897900457C2D /* NSString+MD5.h in Headers */,
 				239C442514A38ED500457C2D /* TapadAdRequest.h in Headers */,
 				239C442B14A38EEE00457C2D /* OpenUDID.h in Headers */,
-				23DE26D31545F99500462AA8 /* TapadBannerView.h in Headers */,
-				23DE26D81545FBE300462AA8 /* TapadBannerViewDelegate.h in Headers */,
+				23EC358E1546632800D302C4 /* TapadBannerView.h in Headers */,
+				23EC35901546632800D302C4 /* TapadBannerViewDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,7 +194,7 @@
 				239C441F14A3897900457C2D /* NSString+MD5.m in Sources */,
 				239C442614A38ED500457C2D /* TapadAdRequest.m in Sources */,
 				239C442C14A38EEE00457C2D /* OpenUDID.m in Sources */,
-				23DE26D41545F99500462AA8 /* TapadBannerView.m in Sources */,
+				23EC358F1546632800D302C4 /* TapadBannerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
