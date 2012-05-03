@@ -53,6 +53,9 @@ static NSString*const kpublisher     =@"pub";
 static NSString*const kproperty      =@"prop";
 static NSString*const kplacement     =@"placementId";
 static NSString*const kwrapHtml      =@"wrapHtml";
+static NSString*const kadServer      =@"adServer";
+
+static NSString*const kadServerValue =@"none";
 
 static const float kTimeout = 2.5;
 
@@ -184,6 +187,7 @@ static const float kTimeout = 2.5;
     if (self.placementId != nil)
         [params addObject:[NSString stringWithFormat:@"%@=%@", kplacement, self.placementId ]];
     [params addObject:[NSString stringWithFormat:@"%@=%@", kwrapHtml, self.wrapHtml ? @"true" : @"false" ]];
+    [params addObject:[NSString stringWithFormat:@"%@=%@", kadServer, kadServerValue]];
 
     return [params componentsJoinedByString:@"&"];
 }
