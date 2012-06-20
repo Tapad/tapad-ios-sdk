@@ -9,8 +9,9 @@
 
 #import "NSString+MD5.h"
 #import "TapadEvent.h"
+#import "TapadIdentifiers.h"
 #import "TapadRequest.h"
-#import "OpenUDID.h"
+#import "UIDevice-Hardware.h"
 
 #pragma mark private protocol for internal stuff
 
@@ -32,7 +33,6 @@
 - (BOOL) checkIfResponseSuccessful;
 - (BOOL) checkForError;
 
-+ (NSString*) deviceID;
 + (NSString*) visibleResponseStatusCode:(NSURLResponse *)response;
 
 
@@ -57,6 +57,8 @@
 
 // params understood by tapad
 static NSString*const kuid           =@"device_id";
+static NSString*const ktypedUid      =@"typed_device_id";
+static NSString*const kplatform      =@"platform";
 
 + (TapadRequest*) requestForEvent:(TapadEvent*)event {
     TapadRequest* request = [[TapadRequest alloc] initWithEvent:event];
@@ -67,12 +69,12 @@ static NSString*const kuid           =@"device_id";
 - (id)init {
     self = [super init];
     if (self) {
-        protocol=@"http";
+        protocol=@"https";
 #ifdef TAPAD_DEBUG
         dns=@"rtb-test.dev.tapad.com";
         port=@":8080";
 #else
-        dns=@"tap.tapad.com";
+        dns=@"analytics.tapad.com";
         port=@"";
 #endif        
         wrapsHTML=NO; // by default, YES
@@ -86,7 +88,7 @@ static NSString*const kuid           =@"device_id";
     self = [self init]; // note: not super init!
     if (self) {
         
-        NSString *rawUrlStr = [NSString stringWithFormat:@"%@://%@%@/apps/action?action_id=%@&app_id=%@&%@",
+        NSString *rawUrlStr = [NSString stringWithFormat:@"%@://%@%@/app/event?action_id=%@&app_id=%@&%@",
                                protocol, dns, port,
                                event.name,
                                event.appId,
@@ -221,7 +223,10 @@ static const float kTimeout = 2.5;
 
     NSMutableArray* params = [NSMutableArray arrayWithCapacity:5]; // autoreleased
 
-    [params addObject:[NSString stringWithFormat:@"%@=%@", kuid, [TapadRequest deviceID] ]];
+    // prevent the server from anonymizing the id again
+    [params addObject:[NSString stringWithFormat:@"%@=%@", @"mask_id", @"false" ]];
+    [params addObject:[NSString stringWithFormat:@"%@=%@", ktypedUid, [TapadIdentifiers deviceID] ]];
+    [params addObject:[NSString stringWithFormat:@"%@=%@", kplatform, [[UIDevice currentDevice] platformString] ]];
 
     /* Add as needed
     NSBundle *bundle = [NSBundle mainBundle];
@@ -237,14 +242,6 @@ static const float kTimeout = 2.5;
      */
 
     return [params componentsJoinedByString:@"&"];
-}
-
-
-#pragma mark class methods
-
-// convenience method
-+ (NSString*) deviceID {
-    return [OpenUDID value];
 }
 
 @end

@@ -17,11 +17,12 @@
 + (NSString*) getTapadOptOutUserDefault;
 + (void) setTapadAppId:(NSString*)appId;
 + (NSString*) getTapadAppId;
++ (BOOL) willSendIdFor:(NSString*)method;
++ (void) setSendIdFor:(NSString*)method to:(BOOL)state;
 
 // the user defaults this value to "YES", so the first call should return YES
 // if the first parameter is YES, then the call will flip the value to NO,
 // and return the value that was previously there
 + (BOOL) isFirstAppInstall:(BOOL)change; 
-
 
 @end

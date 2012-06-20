@@ -21,6 +21,10 @@
 		2395C3B0141FF07F00EF4895 /* TapadRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 2395C3A5141FF07F00EF4895 /* TapadRequest.h */; };
 		2395C3B1141FF07F00EF4895 /* TapadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395C3A6141FF07F00EF4895 /* TapadRequest.m */; };
 		2395C3B6141FF15E00EF4895 /* TapadEvent-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2395C3B5141FF15E00EF4895 /* TapadEvent-Prefix.pch */; };
+		23EC4DF01592181C003DCEAD /* UIDevice-Hardware.h in Headers */ = {isa = PBXBuildFile; fileRef = 23EC4DEE1592181C003DCEAD /* UIDevice-Hardware.h */; };
+		23EC4DF11592181C003DCEAD /* UIDevice-Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EC4DEF1592181C003DCEAD /* UIDevice-Hardware.m */; };
+		23EC4DF81592219B003DCEAD /* TapadIdentifiers.h in Headers */ = {isa = PBXBuildFile; fileRef = 23EC4DF61592219B003DCEAD /* TapadIdentifiers.h */; };
+		23EC4DF91592219B003DCEAD /* TapadIdentifiers.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EC4DF71592219B003DCEAD /* TapadIdentifiers.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +43,10 @@
 		2395C3A5141FF07F00EF4895 /* TapadRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapadRequest.h; sourceTree = "<group>"; };
 		2395C3A6141FF07F00EF4895 /* TapadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapadRequest.m; sourceTree = "<group>"; };
 		2395C3B5141FF15E00EF4895 /* TapadEvent-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TapadEvent-Prefix.pch"; sourceTree = "<group>"; };
+		23EC4DEE1592181C003DCEAD /* UIDevice-Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice-Hardware.h"; sourceTree = "<group>"; };
+		23EC4DEF1592181C003DCEAD /* UIDevice-Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice-Hardware.m"; sourceTree = "<group>"; };
+		23EC4DF61592219B003DCEAD /* TapadIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapadIdentifiers.h; sourceTree = "<group>"; };
+		23EC4DF71592219B003DCEAD /* TapadIdentifiers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapadIdentifiers.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +98,8 @@
 		23561CF814212EB00090FA71 /* TapadEvent */ = {
 			isa = PBXGroup;
 			children = (
+				23EC4DF61592219B003DCEAD /* TapadIdentifiers.h */,
+				23EC4DF71592219B003DCEAD /* TapadIdentifiers.m */,
 				2395C39E141FF07F00EF4895 /* NSString+MD5.h */,
 				2395C39F141FF07F00EF4895 /* NSString+MD5.m */,
 				2395C3A1141FF07F00EF4895 /* TapadEvent.h */,
@@ -114,10 +124,20 @@
 			children = (
 				23561CF814212EB00090FA71 /* TapadEvent */,
 				230D141D141FF8A000E770B0 /* OpenUDID */,
+				23EC4DEC159217C8003DCEAD /* UIDevice */,
 				2395C3B4141FF14200EF4895 /* Support Files */,
 				2395C3B5141FF15E00EF4895 /* TapadEvent-Prefix.pch */,
 			);
 			name = TapadEvent;
+			sourceTree = "<group>";
+		};
+		23EC4DEC159217C8003DCEAD /* UIDevice */ = {
+			isa = PBXGroup;
+			children = (
+				23EC4DEE1592181C003DCEAD /* UIDevice-Hardware.h */,
+				23EC4DEF1592181C003DCEAD /* UIDevice-Hardware.m */,
+			);
+			name = UIDevice;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,6 +154,8 @@
 				2395C3B0141FF07F00EF4895 /* TapadRequest.h in Headers */,
 				2395C3B6141FF15E00EF4895 /* TapadEvent-Prefix.pch in Headers */,
 				230D1420141FF8A000E770B0 /* OpenUDID.h in Headers */,
+				23EC4DF01592181C003DCEAD /* UIDevice-Hardware.h in Headers */,
+				23EC4DF81592219B003DCEAD /* TapadIdentifiers.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +215,8 @@
 				2395C3AF141FF07F00EF4895 /* TapadPreferences.m in Sources */,
 				2395C3B1141FF07F00EF4895 /* TapadRequest.m in Sources */,
 				230D1421141FF8A000E770B0 /* OpenUDID.m in Sources */,
+				23EC4DF11592181C003DCEAD /* UIDevice-Hardware.m in Sources */,
+				23EC4DF91592219B003DCEAD /* TapadIdentifiers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,4 +12,11 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+- (void) resetIdentifierConfig;
+- (void) testEventWithNoIdentifier;
+- (void) testEventWithOpenUDID;
+- (void) testEventWithMD5HashedMAC;
+- (void) testEventWithSHA1HashedMAC;
+- (void) testEventWithAllIdentifiers;
+
 @end
