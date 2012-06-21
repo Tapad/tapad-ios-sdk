@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2318162B147A76BB00D64852 /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 23181622147A76BB00D64852 /* NSData+MD5.m */; };
-		2318162C147A76BB00D64852 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 23181624147A76BB00D64852 /* NSString+MD5.m */; };
-		2318162D147A76BB00D64852 /* TapadEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 23181626147A76BB00D64852 /* TapadEvent.m */; };
-		2318162E147A76BB00D64852 /* TapadPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 23181628147A76BB00D64852 /* TapadPreferences.m */; };
-		2318162F147A76BB00D64852 /* TapadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2318162A147A76BB00D64852 /* TapadRequest.m */; };
 		23181632147A76D300D64852 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 23181631147A76D300D64852 /* OpenUDID.m */; };
 		237C713914210758002DF422 /* DemoAppAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 237C713614210758002DF422 /* DemoAppAppDelegate.m */; };
 		237C713A14210758002DF422 /* DemoAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 237C713814210758002DF422 /* DemoAppViewController.m */; };
@@ -22,21 +17,15 @@
 		23B83F1514210534003DAFFE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B83F1414210534003DAFFE /* UIKit.framework */; };
 		23B83F1714210534003DAFFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B83F1614210534003DAFFE /* Foundation.framework */; };
 		23B83F1914210534003DAFFE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B83F1814210534003DAFFE /* CoreGraphics.framework */; };
-		23EC4E0515925993003DCEAD /* TapadIdentifiers.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EC4E0215925993003DCEAD /* TapadIdentifiers.m */; };
-		23EC4E0615925993003DCEAD /* UIDevice-Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EC4E0415925993003DCEAD /* UIDevice-Hardware.m */; };
+		23C06F251593D17600924AB8 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C06F1C1593D17600924AB8 /* NSString+MD5.m */; };
+		23C06F261593D17600924AB8 /* TapadEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C06F1E1593D17600924AB8 /* TapadEvent.m */; };
+		23C06F271593D17600924AB8 /* TapadIdentifiers.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C06F201593D17600924AB8 /* TapadIdentifiers.m */; };
+		23C06F281593D17600924AB8 /* TapadPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C06F221593D17600924AB8 /* TapadPreferences.m */; };
+		23C06F291593D17600924AB8 /* TapadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C06F241593D17600924AB8 /* TapadRequest.m */; };
+		23C06F301593D1C100924AB8 /* UIDevice-Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C06F2F1593D1C100924AB8 /* UIDevice-Hardware.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		23181621147A76BB00D64852 /* NSData+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+MD5.h"; path = "../event-tracking/NSData+MD5.h"; sourceTree = "<group>"; };
-		23181622147A76BB00D64852 /* NSData+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+MD5.m"; path = "../event-tracking/NSData+MD5.m"; sourceTree = "<group>"; };
-		23181623147A76BB00D64852 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MD5.h"; path = "../event-tracking/NSString+MD5.h"; sourceTree = "<group>"; };
-		23181624147A76BB00D64852 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MD5.m"; path = "../event-tracking/NSString+MD5.m"; sourceTree = "<group>"; };
-		23181625147A76BB00D64852 /* TapadEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TapadEvent.h; path = "../event-tracking/TapadEvent.h"; sourceTree = "<group>"; };
-		23181626147A76BB00D64852 /* TapadEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TapadEvent.m; path = "../event-tracking/TapadEvent.m"; sourceTree = "<group>"; };
-		23181627147A76BB00D64852 /* TapadPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TapadPreferences.h; path = "../event-tracking/TapadPreferences.h"; sourceTree = "<group>"; };
-		23181628147A76BB00D64852 /* TapadPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TapadPreferences.m; path = "../event-tracking/TapadPreferences.m"; sourceTree = "<group>"; };
-		23181629147A76BB00D64852 /* TapadRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TapadRequest.h; path = "../event-tracking/TapadRequest.h"; sourceTree = "<group>"; };
-		2318162A147A76BB00D64852 /* TapadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TapadRequest.m; path = "../event-tracking/TapadRequest.m"; sourceTree = "<group>"; };
 		23181630147A76D300D64852 /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenUDID.h; path = "../event-tracking/OpenUDID/OpenUDID.h"; sourceTree = "<group>"; };
 		23181631147A76D300D64852 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenUDID.m; path = "../event-tracking/OpenUDID/OpenUDID.m"; sourceTree = "<group>"; };
 		237C713514210758002DF422 /* DemoAppAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemoAppAppDelegate.h; path = Classes/DemoAppAppDelegate.h; sourceTree = SOURCE_ROOT; };
@@ -53,10 +42,19 @@
 		23B83F1614210534003DAFFE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		23B83F1814210534003DAFFE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		23B83F2214210534003DAFFE /* DemoApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DemoApp-Prefix.pch"; sourceTree = "<group>"; };
-		23EC4E0115925993003DCEAD /* TapadIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TapadIdentifiers.h; path = "../event-tracking/TapadIdentifiers.h"; sourceTree = "<group>"; };
-		23EC4E0215925993003DCEAD /* TapadIdentifiers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TapadIdentifiers.m; path = "../event-tracking/TapadIdentifiers.m"; sourceTree = "<group>"; };
-		23EC4E0315925993003DCEAD /* UIDevice-Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice-Hardware.h"; path = "../event-tracking/UIDevice-Hardware.h"; sourceTree = "<group>"; };
-		23EC4E0415925993003DCEAD /* UIDevice-Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice-Hardware.m"; path = "../event-tracking/UIDevice-Hardware.m"; sourceTree = "<group>"; };
+		23C06F1B1593D17600924AB8 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MD5.h"; path = "../event-tracking/src/NSString+MD5.h"; sourceTree = "<group>"; };
+		23C06F1C1593D17600924AB8 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MD5.m"; path = "../event-tracking/src/NSString+MD5.m"; sourceTree = "<group>"; };
+		23C06F1D1593D17600924AB8 /* TapadEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TapadEvent.h; path = "../event-tracking/src/TapadEvent.h"; sourceTree = "<group>"; };
+		23C06F1E1593D17600924AB8 /* TapadEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TapadEvent.m; path = "../event-tracking/src/TapadEvent.m"; sourceTree = "<group>"; };
+		23C06F1F1593D17600924AB8 /* TapadIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TapadIdentifiers.h; path = "../event-tracking/src/TapadIdentifiers.h"; sourceTree = "<group>"; };
+		23C06F201593D17600924AB8 /* TapadIdentifiers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TapadIdentifiers.m; path = "../event-tracking/src/TapadIdentifiers.m"; sourceTree = "<group>"; };
+		23C06F211593D17600924AB8 /* TapadPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TapadPreferences.h; path = "../event-tracking/src/TapadPreferences.h"; sourceTree = "<group>"; };
+		23C06F221593D17600924AB8 /* TapadPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TapadPreferences.m; path = "../event-tracking/src/TapadPreferences.m"; sourceTree = "<group>"; };
+		23C06F231593D17600924AB8 /* TapadRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TapadRequest.h; path = "../event-tracking/src/TapadRequest.h"; sourceTree = "<group>"; };
+		23C06F241593D17600924AB8 /* TapadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TapadRequest.m; path = "../event-tracking/src/TapadRequest.m"; sourceTree = "<group>"; };
+		23C06F2E1593D1C100924AB8 /* UIDevice-Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice-Hardware.h"; path = "../event-tracking/UIDevice-Hardware/UIDevice-Hardware.h"; sourceTree = "<group>"; };
+		23C06F2F1593D1C100924AB8 /* UIDevice-Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice-Hardware.m"; path = "../event-tracking/UIDevice-Hardware/UIDevice-Hardware.m"; sourceTree = "<group>"; };
+		23E99F921593CC8100D7EA17 /* MyEnabledTapadIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEnabledTapadIdentifiers.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,20 +74,9 @@
 		23561CFA14212EFC0090FA71 /* TapadEvent */ = {
 			isa = PBXGroup;
 			children = (
-				23EC4E0115925993003DCEAD /* TapadIdentifiers.h */,
-				23EC4E0215925993003DCEAD /* TapadIdentifiers.m */,
-				23EC4E0315925993003DCEAD /* UIDevice-Hardware.h */,
-				23EC4E0415925993003DCEAD /* UIDevice-Hardware.m */,
-				23181621147A76BB00D64852 /* NSData+MD5.h */,
-				23181622147A76BB00D64852 /* NSData+MD5.m */,
-				23181623147A76BB00D64852 /* NSString+MD5.h */,
-				23181624147A76BB00D64852 /* NSString+MD5.m */,
-				23181625147A76BB00D64852 /* TapadEvent.h */,
-				23181626147A76BB00D64852 /* TapadEvent.m */,
-				23181627147A76BB00D64852 /* TapadPreferences.h */,
-				23181628147A76BB00D64852 /* TapadPreferences.m */,
-				23181629147A76BB00D64852 /* TapadRequest.h */,
-				2318162A147A76BB00D64852 /* TapadRequest.m */,
+				23C06F1A1593D16100924AB8 /* src */,
+				23561D0714212F380090FA71 /* OpenUDID */,
+				23C06F2A1593D18B00924AB8 /* UIDevice */,
 			);
 			name = TapadEvent;
 			sourceTree = "<group>";
@@ -106,9 +93,9 @@
 		23A4CFEE14212DBC006ADF52 /* DemoApp */ = {
 			isa = PBXGroup;
 			children = (
-				23561D0714212F380090FA71 /* OpenUDID */,
 				23561CFA14212EFC0090FA71 /* TapadEvent */,
 				23B83F1B14210534003DAFFE /* Supporting Files */,
+				23E99F921593CC8100D7EA17 /* MyEnabledTapadIdentifiers.h */,
 				237C713514210758002DF422 /* DemoAppAppDelegate.h */,
 				237C713614210758002DF422 /* DemoAppAppDelegate.m */,
 				237C713714210758002DF422 /* DemoAppViewController.h */,
@@ -156,6 +143,32 @@
 			);
 			name = "Supporting Files";
 			path = DemoApp;
+			sourceTree = "<group>";
+		};
+		23C06F1A1593D16100924AB8 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				23C06F1B1593D17600924AB8 /* NSString+MD5.h */,
+				23C06F1C1593D17600924AB8 /* NSString+MD5.m */,
+				23C06F1D1593D17600924AB8 /* TapadEvent.h */,
+				23C06F1E1593D17600924AB8 /* TapadEvent.m */,
+				23C06F1F1593D17600924AB8 /* TapadIdentifiers.h */,
+				23C06F201593D17600924AB8 /* TapadIdentifiers.m */,
+				23C06F211593D17600924AB8 /* TapadPreferences.h */,
+				23C06F221593D17600924AB8 /* TapadPreferences.m */,
+				23C06F231593D17600924AB8 /* TapadRequest.h */,
+				23C06F241593D17600924AB8 /* TapadRequest.m */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		23C06F2A1593D18B00924AB8 /* UIDevice */ = {
+			isa = PBXGroup;
+			children = (
+				23C06F2E1593D1C100924AB8 /* UIDevice-Hardware.h */,
+				23C06F2F1593D1C100924AB8 /* UIDevice-Hardware.m */,
+			);
+			name = UIDevice;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,14 +237,13 @@
 				237C713914210758002DF422 /* DemoAppAppDelegate.m in Sources */,
 				237C713A14210758002DF422 /* DemoAppViewController.m in Sources */,
 				237C713E1421081B002DF422 /* main.m in Sources */,
-				2318162B147A76BB00D64852 /* NSData+MD5.m in Sources */,
-				2318162C147A76BB00D64852 /* NSString+MD5.m in Sources */,
-				2318162D147A76BB00D64852 /* TapadEvent.m in Sources */,
-				2318162E147A76BB00D64852 /* TapadPreferences.m in Sources */,
-				2318162F147A76BB00D64852 /* TapadRequest.m in Sources */,
 				23181632147A76D300D64852 /* OpenUDID.m in Sources */,
-				23EC4E0515925993003DCEAD /* TapadIdentifiers.m in Sources */,
-				23EC4E0615925993003DCEAD /* UIDevice-Hardware.m in Sources */,
+				23C06F251593D17600924AB8 /* NSString+MD5.m in Sources */,
+				23C06F261593D17600924AB8 /* TapadEvent.m in Sources */,
+				23C06F271593D17600924AB8 /* TapadIdentifiers.m in Sources */,
+				23C06F281593D17600924AB8 /* TapadPreferences.m in Sources */,
+				23C06F291593D17600924AB8 /* TapadRequest.m in Sources */,
+				23C06F301593D1C100924AB8 /* UIDevice-Hardware.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

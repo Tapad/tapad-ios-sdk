@@ -34,7 +34,9 @@
     [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(testEventWithOpenUDID) userInfo:nil repeats:NO];
     [NSTimer scheduledTimerWithTimeInterval:6 target:self selector:@selector(testEventWithMD5HashedMAC) userInfo:nil repeats:NO];
     [NSTimer scheduledTimerWithTimeInterval:8 target:self selector:@selector(testEventWithSHA1HashedMAC) userInfo:nil repeats:NO];
-    [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(testEventWithAllIdentifiers) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(testEventWithMD5HashedUDID) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:12 target:self selector:@selector(testEventWithSHA1HashedUDID) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:14 target:self selector:@selector(testEventWithAllIdentifiers) userInfo:nil repeats:NO];
 }
 
 - (void) resetIdentifierConfig {
@@ -42,6 +44,8 @@
     [TapadIdentifiers sendOpenUDID:NO];
     [TapadIdentifiers sendMD5HashedMAC:NO];
     [TapadIdentifiers sendSHA1HashedMAC:NO];
+    [TapadIdentifiers sendMD5HashedUDID:NO];
+    [TapadIdentifiers sendSHA1HashedUDID:NO];
 }
 
 - (void) testEventWithNoIdentifier {
@@ -81,6 +85,26 @@
     [TapadEvent send:@"SHA1HashedMAC specified"];
 }
 
+- (void) testEventWithMD5HashedUDID {
+    [self resetIdentifierConfig];
+    
+    // enable MD5 Hashed UDID
+    [TapadIdentifiers sendMD5HashedUDID:YES];
+    
+    // send test event with MD5 Hashed UDID enabled
+    [TapadEvent send:@"MD5HashedUDID specified"];
+}
+
+- (void) testEventWithSHA1HashedUDID {
+    [self resetIdentifierConfig];
+    
+    // enable SHA1 Hashed UDID
+    [TapadIdentifiers sendSHA1HashedUDID:YES];
+    
+    // send test event with SHA1 Hashed UDID enabled
+    [TapadEvent send:@"SHA1HashedUDID specified"];
+}
+
 - (void) testEventWithAllIdentifiers {
     [self resetIdentifierConfig];
 
@@ -88,6 +112,8 @@
     [TapadIdentifiers sendOpenUDID:YES];
     [TapadIdentifiers sendMD5HashedMAC:YES];
     [TapadIdentifiers sendSHA1HashedMAC:YES];
+    [TapadIdentifiers sendMD5HashedUDID:YES];
+    [TapadIdentifiers sendSHA1HashedUDID:YES];
     
     // send test event with all identifiers enabled
     [TapadEvent send:@"all identifiers enabled"];

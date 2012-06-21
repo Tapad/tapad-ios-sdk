@@ -7,15 +7,35 @@
 
 #import <Foundation/Foundation.h>
 
+// edit this header file to enable identifiers allowed for your app
+#import "MyEnabledTapadIdentifiers.h"
 
 @interface TapadIdentifiers : NSObject {}
 
+#ifdef TAPAD_IDENTIFIER_ENABLE_OPENUDID
 + (BOOL) willSendOpenUDID;
 + (void) sendOpenUDID:(BOOL)state;
+#endif
+
+#ifdef TAPAD_IDENTIFIER_ENABLE_MD5_HASHED_MAC
 + (BOOL) willSendMD5HashedMAC;
 + (void) sendMD5HashedMAC:(BOOL)state;
+#endif
+
+#ifdef TAPAD_IDENTIFIER_ENABLE_SHA1_HASHED_MAC
 + (BOOL) willSendSHA1HashedMAC;
 + (void) sendSHA1HashedMAC:(BOOL)state;
+#endif
+
+#ifdef TAPAD_IDENTIFIER_ENABLE_MD5_HASHED_UDID
++ (BOOL) willSendMD5HashedUDID;
++ (void) sendMD5HashedUDID:(BOOL)state;
+#endif
+
+#ifdef TAPAD_IDENTIFIER_ENABLE_SHA1_HASHED_UDID
++ (BOOL) willSendSHA1HashedUDID;
++ (void) sendSHA1HashedUDID:(BOOL)state;
+#endif
 
 + (NSString*) deviceID;
 

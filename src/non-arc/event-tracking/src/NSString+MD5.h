@@ -12,5 +12,6 @@
 @interface NSString (MD5)
 
 - (NSString *)MD5;
+- (NSString *)SHA1;
 
 @end
