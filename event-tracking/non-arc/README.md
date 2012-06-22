@@ -18,7 +18,7 @@ The full list of identifiers is exercised in the provided demo app. The develope
 
 ## Initialization and install tracking
 
-In "- (void)applicationDidFinishLaunching:(UIApplication *)application" of the main application delegate, add the following code:
+In `- (void)applicationDidFinishLaunching:(UIApplication *)application` of the main application delegate, add the following code:
 
 ```objective-c
   // register the Tapad Given Application Identifier
