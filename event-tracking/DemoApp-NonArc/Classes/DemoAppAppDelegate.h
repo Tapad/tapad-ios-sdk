@@ -19,10 +19,12 @@
 - (void) resetIdentifierConfig;
 - (void) testEventWithNoIdentifier;
 - (void) testEventWithOpenUDID;
-- (void) testEventWithMD5HashedMAC;
-- (void) testEventWithSHA1HashedMAC;
+- (void) testEventWithMD5HashedRawMAC;
+- (void) testEventWithSHA1HashedRawMAC;
 - (void) testEventWithMD5HashedUDID;
 - (void) testEventWithSHA1HashedUDID;
+- (void) testEventWithMD5HashedMAC;
+- (void) testEventWithSHA1HashedMAC;
 - (void) testEventWithAllIdentifiers;
 
 @end

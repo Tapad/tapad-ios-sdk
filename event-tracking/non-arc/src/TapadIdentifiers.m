@@ -19,12 +19,12 @@
 +(NSString*) fetchOpenUDID;
 #endif
 
-#ifdef TAPAD_IDENTIFIER_ENABLE_MD5_HASHED_MAC
-+(NSString*) fetchMD5HashedMAC;
+#ifdef TAPAD_IDENTIFIER_ENABLE_MD5_HASHED_RAW_MAC
++(NSString*) fetchMD5HashedRawMAC;
 #endif
 
-#ifdef TAPAD_IDENTIFIER_ENABLE_SHA1_HASHED_MAC
-+(NSString*) fetchSHA1HashedMAC;
+#ifdef TAPAD_IDENTIFIER_ENABLE_SHA1_HASHED_RAW_MAC
++(NSString*) fetchSHA1HashedRawMAC;
 #endif
 
 #ifdef TAPAD_IDENTIFIER_ENABLE_MD5_HASHED_UDID
@@ -33,6 +33,14 @@
 
 #ifdef TAPAD_IDENTIFIER_ENABLE_SHA1_HASHED_UDID
 +(NSString*) fetchSHA1HashedUDID;
+#endif
+
+#ifdef TAPAD_IDENTIFIER_ENABLE_MD5_HASHED_MAC
++(NSString*) fetchMD5HashedMAC;
+#endif
+
+#ifdef TAPAD_IDENTIFIER_ENABLE_SHA1_HASHED_MAC
++(NSString*) fetchSHA1HashedMAC;
 #endif
 
 +(NSString*) defaultDeviceID;
@@ -57,19 +65,19 @@ static NSString* kTYPE_OPENUDID = @"0";
 }
 #endif
 
-#ifdef TAPAD_IDENTIFIER_ENABLE_MD5_HASHED_MAC
-static NSString* kMETHOD_MD5_HASHED_MAC = @"MD5 Hashed MAC";
-static NSString* kTYPE_MD5_HASHED_MAC = @"1";
+#ifdef TAPAD_IDENTIFIER_ENABLE_MD5_HASHED_RAW_MAC
+static NSString* kMETHOD_MD5_HASHED_RAW_MAC = @"MD5 Hashed Raw MAC";
+static NSString* kTYPE_MD5_HASHED_RAW_MAC = @"1";
 
-+ (BOOL) willSendMD5HashedMAC {
-    return [TapadPreferences willSendIdFor:kMETHOD_MD5_HASHED_MAC];
++ (BOOL) willSendMD5HashedRawMAC {
+    return [TapadPreferences willSendIdFor:kMETHOD_MD5_HASHED_RAW_MAC];
 }
 
-+ (void) sendMD5HashedMAC:(BOOL)state {
-    [TapadPreferences setSendIdFor:kMETHOD_MD5_HASHED_MAC to:state];
++ (void) sendMD5HashedRawMAC:(BOOL)state {
+    [TapadPreferences setSendIdFor:kMETHOD_MD5_HASHED_RAW_MAC to:state];
 }
 
-+ (NSString*) fetchMD5HashedMAC {
++ (NSString*) fetchMD5HashedRawMAC {
     // storage of mac addy bytes
     unsigned char macBuffer[6];
     // storage of md5 output bytes
@@ -84,27 +92,27 @@ static NSString* kTYPE_MD5_HASHED_MAC = @"1";
         for (int i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
             [output appendFormat:@"%02x",md5Buffer[i]];
         }
-        return [NSString stringWithFormat:@"%@:%@", kTYPE_MD5_HASHED_MAC, output];
+        return [NSString stringWithFormat:@"%@:%@", kTYPE_MD5_HASHED_RAW_MAC, output];
     }
     else {
-        return [NSString stringWithFormat:@"%@:%@", kTYPE_MD5_HASHED_MAC, @"0"];
+        return [NSString stringWithFormat:@"%@:%@", kTYPE_MD5_HASHED_RAW_MAC, @"0"];
     }
 }
 #endif
 
-#ifdef TAPAD_IDENTIFIER_ENABLE_SHA1_HASHED_MAC
-static NSString* kMETHOD_SHA1_HASHED_MAC = @"SHA1 Hashed MAC";
-static NSString* kTYPE_SHA1_HASHED_MAC = @"2";
+#ifdef TAPAD_IDENTIFIER_ENABLE_SHA1_HASHED_RAW_MAC
+static NSString* kMETHOD_SHA1_HASHED_RAW_MAC = @"SHA1 Hashed Raw MAC";
+static NSString* kTYPE_SHA1_HASHED_RAW_MAC = @"2";
 
-+ (BOOL) willSendSHA1HashedMAC {
-    return [TapadPreferences willSendIdFor:kMETHOD_SHA1_HASHED_MAC];
++ (BOOL) willSendSHA1HashedRawMAC {
+    return [TapadPreferences willSendIdFor:kMETHOD_SHA1_HASHED_RAW_MAC];
 }
 
-+ (void) sendSHA1HashedMAC:(BOOL)state {
-    [TapadPreferences setSendIdFor:kMETHOD_SHA1_HASHED_MAC to:state];
++ (void) sendSHA1HashedRawMAC:(BOOL)state {
+    [TapadPreferences setSendIdFor:kMETHOD_SHA1_HASHED_RAW_MAC to:state];
 }
 
-+ (NSString*) fetchSHA1HashedMAC {
++ (NSString*) fetchSHA1HashedRawMAC {
     // storage of mac addy bytes
     unsigned char macBuffer[6];
     // storage of sha1 output bytes
@@ -119,10 +127,10 @@ static NSString* kTYPE_SHA1_HASHED_MAC = @"2";
         for (int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++) {
             [output appendFormat:@"%02x",sha1Buffer[i]];
         }
-        return [NSString stringWithFormat:@"%@:%@", kTYPE_SHA1_HASHED_MAC, output];
+        return [NSString stringWithFormat:@"%@:%@", kTYPE_SHA1_HASHED_RAW_MAC, output];
     }
     else {
-        return [NSString stringWithFormat:@"%@:%@", kTYPE_SHA1_HASHED_MAC, @"0"];
+        return [NSString stringWithFormat:@"%@:%@", kTYPE_SHA1_HASHED_RAW_MAC, @"0"];
     }
 }
 #endif
@@ -171,8 +179,52 @@ static NSString* kTYPE_SHA1_HASHED_UDID = @"4";
 }
 #endif
 
+#ifdef TAPAD_IDENTIFIER_ENABLE_MD5_HASHED_MAC
+static NSString* kMETHOD_MD5_HASHED_MAC = @"MD5 Hashed MAC";
+static NSString* kTYPE_MD5_HASHED_MAC = @"5";
+
++ (BOOL) willSendMD5HashedMAC {
+    return [TapadPreferences willSendIdFor:kMETHOD_MD5_HASHED_MAC];
+}
+
++ (void) sendMD5HashedMAC:(BOOL)state {
+    [TapadPreferences setSendIdFor:kMETHOD_MD5_HASHED_MAC to:state];
+}
+
++ (NSString*) fetchMD5HashedMAC {
+    if ([[UIDevice currentDevice] macaddress] == NULL) {
+        return [NSString stringWithFormat:@"%@:%@", kTYPE_MD5_HASHED_MAC, @"0"];
+    }
+    else {
+        return [NSString stringWithFormat:@"%@:%@", kTYPE_MD5_HASHED_MAC, [[[UIDevice currentDevice] macaddress] MD5]];
+    }
+}
+#endif
+
+#ifdef TAPAD_IDENTIFIER_ENABLE_SHA1_HASHED_MAC
+static NSString* kMETHOD_SHA1_HASHED_MAC = @"SHA1 Hashed MAC";
+static NSString* kTYPE_SHA1_HASHED_MAC = @"6";
+
++ (BOOL) willSendSHA1HashedMAC {
+    return [TapadPreferences willSendIdFor:kMETHOD_SHA1_HASHED_MAC];
+}
+
++ (void) sendSHA1HashedMAC:(BOOL)state {
+    [TapadPreferences setSendIdFor:kMETHOD_SHA1_HASHED_MAC to:state];
+}
+
++ (NSString*) fetchSHA1HashedMAC {
+    if ([[UIDevice currentDevice] macaddress] == NULL) {
+        return [NSString stringWithFormat:@"%@:%@", kTYPE_SHA1_HASHED_MAC, @"0"];
+    }
+    else {
+        return [NSString stringWithFormat:@"%@:%@", kTYPE_SHA1_HASHED_MAC, [[[UIDevice currentDevice] macaddress] SHA1]];
+    }
+}
+#endif
+
 + (NSString*) deviceID {
-    NSMutableArray* ids = [NSMutableArray arrayWithCapacity:5]; // autoreleased
+    NSMutableArray* ids = [NSMutableArray arrayWithCapacity:7]; // autoreleased
 
 #ifdef TAPAD_IDENTIFIER_ENABLE_OPENUDID
     if ([TapadIdentifiers willSendOpenUDID]) {
@@ -180,15 +232,15 @@ static NSString* kTYPE_SHA1_HASHED_UDID = @"4";
     }
 #endif
 
-#ifdef TAPAD_IDENTIFIER_ENABLE_MD5_HASHED_MAC
-    if ([TapadIdentifiers willSendMD5HashedMAC]) {
-        [ids addObject:[TapadIdentifiers fetchMD5HashedMAC]];
+#ifdef TAPAD_IDENTIFIER_ENABLE_MD5_HASHED_RAW_MAC
+    if ([TapadIdentifiers willSendMD5HashedRawMAC]) {
+        [ids addObject:[TapadIdentifiers fetchMD5HashedRawMAC]];
     }
 #endif
 
-#ifdef TAPAD_IDENTIFIER_ENABLE_SHA1_HASHED_MAC
-    if ([TapadIdentifiers willSendSHA1HashedMAC]) {
-        [ids addObject:[TapadIdentifiers fetchSHA1HashedMAC]];
+#ifdef TAPAD_IDENTIFIER_ENABLE_SHA1_HASHED_RAW_MAC
+    if ([TapadIdentifiers willSendSHA1HashedRawMAC]) {
+        [ids addObject:[TapadIdentifiers fetchSHA1HashedRawMAC]];
     }
 #endif
 
@@ -201,6 +253,18 @@ static NSString* kTYPE_SHA1_HASHED_UDID = @"4";
 #ifdef TAPAD_IDENTIFIER_ENABLE_SHA1_HASHED_UDID
     if ([TapadIdentifiers willSendSHA1HashedUDID]) {
         [ids addObject:[TapadIdentifiers fetchSHA1HashedUDID]];
+    }
+#endif
+
+#ifdef TAPAD_IDENTIFIER_ENABLE_MD5_HASHED_MAC
+    if ([TapadIdentifiers willSendMD5HashedMAC]) {
+        [ids addObject:[TapadIdentifiers fetchMD5HashedMAC]];
+    }
+#endif
+    
+#ifdef TAPAD_IDENTIFIER_ENABLE_SHA1_HASHED_MAC
+    if ([TapadIdentifiers willSendSHA1HashedMAC]) {
+        [ids addObject:[TapadIdentifiers fetchSHA1HashedMAC]];
     }
 #endif
 

@@ -17,14 +17,14 @@
 + (void) sendOpenUDID:(BOOL)state;
 #endif
 
-#ifdef TAPAD_IDENTIFIER_ENABLE_MD5_HASHED_MAC
-+ (BOOL) willSendMD5HashedMAC;
-+ (void) sendMD5HashedMAC:(BOOL)state;
+#ifdef TAPAD_IDENTIFIER_ENABLE_MD5_HASHED_RAW_MAC
++ (BOOL) willSendMD5HashedRawMAC;
++ (void) sendMD5HashedRawMAC:(BOOL)state;
 #endif
 
-#ifdef TAPAD_IDENTIFIER_ENABLE_SHA1_HASHED_MAC
-+ (BOOL) willSendSHA1HashedMAC;
-+ (void) sendSHA1HashedMAC:(BOOL)state;
+#ifdef TAPAD_IDENTIFIER_ENABLE_SHA1_HASHED_RAW_MAC
++ (BOOL) willSendSHA1HashedRawMAC;
++ (void) sendSHA1HashedRawMAC:(BOOL)state;
 #endif
 
 #ifdef TAPAD_IDENTIFIER_ENABLE_MD5_HASHED_UDID
@@ -35,6 +35,16 @@
 #ifdef TAPAD_IDENTIFIER_ENABLE_SHA1_HASHED_UDID
 + (BOOL) willSendSHA1HashedUDID;
 + (void) sendSHA1HashedUDID:(BOOL)state;
+#endif
+
+#ifdef TAPAD_IDENTIFIER_ENABLE_MD5_HASHED_MAC
++ (BOOL) willSendMD5HashedMAC;
++ (void) sendMD5HashedMAC:(BOOL)state;
+#endif
+
+#ifdef TAPAD_IDENTIFIER_ENABLE_SHA1_HASHED_MAC
++ (BOOL) willSendSHA1HashedMAC;
++ (void) sendSHA1HashedMAC:(BOOL)state;
 #endif
 
 + (NSString*) deviceID;
