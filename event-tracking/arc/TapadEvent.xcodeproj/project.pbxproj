@@ -10,17 +10,20 @@
 		230D1420141FF8A000E770B0 /* OpenUDID.h in Headers */ = {isa = PBXBuildFile; fileRef = 230D141E141FF8A000E770B0 /* OpenUDID.h */; };
 		230D1421141FF8A000E770B0 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 230D141F141FF8A000E770B0 /* OpenUDID.m */; };
 		230F9800141FEEAD001936EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 230F97FF141FEEAD001936EC /* Foundation.framework */; };
-		2395C3A7141FF07F00EF4895 /* NSData+MD5.h in Headers */ = {isa = PBXBuildFile; fileRef = 2395C39C141FF07F00EF4895 /* NSData+MD5.h */; };
-		2395C3A8141FF07F00EF4895 /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395C39D141FF07F00EF4895 /* NSData+MD5.m */; };
-		2395C3A9141FF07F00EF4895 /* NSString+MD5.h in Headers */ = {isa = PBXBuildFile; fileRef = 2395C39E141FF07F00EF4895 /* NSString+MD5.h */; };
-		2395C3AA141FF07F00EF4895 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395C39F141FF07F00EF4895 /* NSString+MD5.m */; };
-		2395C3AC141FF07F00EF4895 /* TapadEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 2395C3A1141FF07F00EF4895 /* TapadEvent.h */; };
-		2395C3AD141FF07F00EF4895 /* TapadEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395C3A2141FF07F00EF4895 /* TapadEvent.m */; };
-		2395C3AE141FF07F00EF4895 /* TapadPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = 2395C3A3141FF07F00EF4895 /* TapadPreferences.h */; };
-		2395C3AF141FF07F00EF4895 /* TapadPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395C3A4141FF07F00EF4895 /* TapadPreferences.m */; };
-		2395C3B0141FF07F00EF4895 /* TapadRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 2395C3A5141FF07F00EF4895 /* TapadRequest.h */; };
-		2395C3B1141FF07F00EF4895 /* TapadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2395C3A6141FF07F00EF4895 /* TapadRequest.m */; };
 		2395C3B6141FF15E00EF4895 /* TapadEvent-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2395C3B5141FF15E00EF4895 /* TapadEvent-Prefix.pch */; };
+		23FC78C9159401F1002C1A53 /* UIDevice-Hardware.h in Headers */ = {isa = PBXBuildFile; fileRef = 23FC78C7159401F1002C1A53 /* UIDevice-Hardware.h */; };
+		23FC78CA159401F1002C1A53 /* UIDevice-Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FC78C8159401F1002C1A53 /* UIDevice-Hardware.m */; };
+		23FC78D715940212002C1A53 /* NSString+MD5.h in Headers */ = {isa = PBXBuildFile; fileRef = 23FC78CD15940212002C1A53 /* NSString+MD5.h */; };
+		23FC78D815940212002C1A53 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FC78CE15940212002C1A53 /* NSString+MD5.m */; };
+		23FC78D915940212002C1A53 /* TapadEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 23FC78CF15940212002C1A53 /* TapadEvent.h */; };
+		23FC78DA15940212002C1A53 /* TapadEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FC78D015940212002C1A53 /* TapadEvent.m */; };
+		23FC78DB15940212002C1A53 /* TapadIdentifiers.h in Headers */ = {isa = PBXBuildFile; fileRef = 23FC78D115940212002C1A53 /* TapadIdentifiers.h */; };
+		23FC78DC15940212002C1A53 /* TapadIdentifiers.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FC78D215940212002C1A53 /* TapadIdentifiers.m */; };
+		23FC78DD15940212002C1A53 /* TapadPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = 23FC78D315940212002C1A53 /* TapadPreferences.h */; };
+		23FC78DE15940212002C1A53 /* TapadPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FC78D415940212002C1A53 /* TapadPreferences.m */; };
+		23FC78DF15940212002C1A53 /* TapadRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 23FC78D515940212002C1A53 /* TapadRequest.h */; };
+		23FC78E015940212002C1A53 /* TapadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FC78D615940212002C1A53 /* TapadRequest.m */; };
+		23FC78E21594021C002C1A53 /* MyEnabledTapadIdentifiers.h in Headers */ = {isa = PBXBuildFile; fileRef = 23FC78E11594021C002C1A53 /* MyEnabledTapadIdentifiers.h */; settings = {ATTRIBUTES = (Private, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,17 +31,20 @@
 		230D141F141FF8A000E770B0 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		230F97FC141FEEAD001936EC /* libTapadEvent.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTapadEvent.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		230F97FF141FEEAD001936EC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		2395C39C141FF07F00EF4895 /* NSData+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MD5.h"; sourceTree = "<group>"; };
-		2395C39D141FF07F00EF4895 /* NSData+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MD5.m"; sourceTree = "<group>"; };
-		2395C39E141FF07F00EF4895 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
-		2395C39F141FF07F00EF4895 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
-		2395C3A1141FF07F00EF4895 /* TapadEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapadEvent.h; sourceTree = "<group>"; };
-		2395C3A2141FF07F00EF4895 /* TapadEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapadEvent.m; sourceTree = "<group>"; };
-		2395C3A3141FF07F00EF4895 /* TapadPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapadPreferences.h; sourceTree = "<group>"; };
-		2395C3A4141FF07F00EF4895 /* TapadPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapadPreferences.m; sourceTree = "<group>"; };
-		2395C3A5141FF07F00EF4895 /* TapadRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapadRequest.h; sourceTree = "<group>"; };
-		2395C3A6141FF07F00EF4895 /* TapadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapadRequest.m; sourceTree = "<group>"; };
 		2395C3B5141FF15E00EF4895 /* TapadEvent-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TapadEvent-Prefix.pch"; sourceTree = "<group>"; };
+		23FC78C7159401F1002C1A53 /* UIDevice-Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice-Hardware.h"; path = "UIDevice-Hardware/UIDevice-Hardware.h"; sourceTree = "<group>"; };
+		23FC78C8159401F1002C1A53 /* UIDevice-Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice-Hardware.m"; path = "UIDevice-Hardware/UIDevice-Hardware.m"; sourceTree = "<group>"; };
+		23FC78CD15940212002C1A53 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MD5.h"; path = "src/NSString+MD5.h"; sourceTree = "<group>"; };
+		23FC78CE15940212002C1A53 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MD5.m"; path = "src/NSString+MD5.m"; sourceTree = "<group>"; };
+		23FC78CF15940212002C1A53 /* TapadEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TapadEvent.h; path = src/TapadEvent.h; sourceTree = "<group>"; };
+		23FC78D015940212002C1A53 /* TapadEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TapadEvent.m; path = src/TapadEvent.m; sourceTree = "<group>"; };
+		23FC78D115940212002C1A53 /* TapadIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TapadIdentifiers.h; path = src/TapadIdentifiers.h; sourceTree = "<group>"; };
+		23FC78D215940212002C1A53 /* TapadIdentifiers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TapadIdentifiers.m; path = src/TapadIdentifiers.m; sourceTree = "<group>"; };
+		23FC78D315940212002C1A53 /* TapadPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TapadPreferences.h; path = src/TapadPreferences.h; sourceTree = "<group>"; };
+		23FC78D415940212002C1A53 /* TapadPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TapadPreferences.m; path = src/TapadPreferences.m; sourceTree = "<group>"; };
+		23FC78D515940212002C1A53 /* TapadRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TapadRequest.h; path = src/TapadRequest.h; sourceTree = "<group>"; };
+		23FC78D615940212002C1A53 /* TapadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TapadRequest.m; path = src/TapadRequest.m; sourceTree = "<group>"; };
+		23FC78E11594021C002C1A53 /* MyEnabledTapadIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEnabledTapadIdentifiers.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,21 +93,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		23561CF814212EB00090FA71 /* TapadEvent */ = {
-			isa = PBXGroup;
-			children = (
-				2395C39E141FF07F00EF4895 /* NSString+MD5.h */,
-				2395C39F141FF07F00EF4895 /* NSString+MD5.m */,
-				2395C3A1141FF07F00EF4895 /* TapadEvent.h */,
-				2395C3A2141FF07F00EF4895 /* TapadEvent.m */,
-				2395C3A3141FF07F00EF4895 /* TapadPreferences.h */,
-				2395C3A4141FF07F00EF4895 /* TapadPreferences.m */,
-				2395C3A5141FF07F00EF4895 /* TapadRequest.h */,
-				2395C3A6141FF07F00EF4895 /* TapadRequest.m */,
-			);
-			name = TapadEvent;
-			sourceTree = "<group>";
-		};
 		2395C3B4141FF14200EF4895 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,12 +103,40 @@
 		23A4D00114212E15006ADF52 /* TapadEvent */ = {
 			isa = PBXGroup;
 			children = (
-				23561CF814212EB00090FA71 /* TapadEvent */,
+				23FC78E11594021C002C1A53 /* MyEnabledTapadIdentifiers.h */,
+				23FC78CC159401F7002C1A53 /* src */,
 				230D141D141FF8A000E770B0 /* OpenUDID */,
+				23DA42A6159401C700D269A2 /* UIDevice */,
 				2395C3B4141FF14200EF4895 /* Support Files */,
 				2395C3B5141FF15E00EF4895 /* TapadEvent-Prefix.pch */,
 			);
 			name = TapadEvent;
+			sourceTree = "<group>";
+		};
+		23DA42A6159401C700D269A2 /* UIDevice */ = {
+			isa = PBXGroup;
+			children = (
+				23FC78C7159401F1002C1A53 /* UIDevice-Hardware.h */,
+				23FC78C8159401F1002C1A53 /* UIDevice-Hardware.m */,
+			);
+			name = UIDevice;
+			sourceTree = "<group>";
+		};
+		23FC78CC159401F7002C1A53 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				23FC78CD15940212002C1A53 /* NSString+MD5.h */,
+				23FC78CE15940212002C1A53 /* NSString+MD5.m */,
+				23FC78CF15940212002C1A53 /* TapadEvent.h */,
+				23FC78D015940212002C1A53 /* TapadEvent.m */,
+				23FC78D115940212002C1A53 /* TapadIdentifiers.h */,
+				23FC78D215940212002C1A53 /* TapadIdentifiers.m */,
+				23FC78D315940212002C1A53 /* TapadPreferences.h */,
+				23FC78D415940212002C1A53 /* TapadPreferences.m */,
+				23FC78D515940212002C1A53 /* TapadRequest.h */,
+				23FC78D615940212002C1A53 /* TapadRequest.m */,
+			);
+			name = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,13 +146,15 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2395C3A7141FF07F00EF4895 /* NSData+MD5.h in Headers */,
-				2395C3A9141FF07F00EF4895 /* NSString+MD5.h in Headers */,
-				2395C3AC141FF07F00EF4895 /* TapadEvent.h in Headers */,
-				2395C3AE141FF07F00EF4895 /* TapadPreferences.h in Headers */,
-				2395C3B0141FF07F00EF4895 /* TapadRequest.h in Headers */,
+				23FC78E21594021C002C1A53 /* MyEnabledTapadIdentifiers.h in Headers */,
 				2395C3B6141FF15E00EF4895 /* TapadEvent-Prefix.pch in Headers */,
 				230D1420141FF8A000E770B0 /* OpenUDID.h in Headers */,
+				23FC78C9159401F1002C1A53 /* UIDevice-Hardware.h in Headers */,
+				23FC78D715940212002C1A53 /* NSString+MD5.h in Headers */,
+				23FC78D915940212002C1A53 /* TapadEvent.h in Headers */,
+				23FC78DB15940212002C1A53 /* TapadIdentifiers.h in Headers */,
+				23FC78DD15940212002C1A53 /* TapadPreferences.h in Headers */,
+				23FC78DF15940212002C1A53 /* TapadRequest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,12 +208,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2395C3A8141FF07F00EF4895 /* NSData+MD5.m in Sources */,
-				2395C3AA141FF07F00EF4895 /* NSString+MD5.m in Sources */,
-				2395C3AD141FF07F00EF4895 /* TapadEvent.m in Sources */,
-				2395C3AF141FF07F00EF4895 /* TapadPreferences.m in Sources */,
-				2395C3B1141FF07F00EF4895 /* TapadRequest.m in Sources */,
 				230D1421141FF8A000E770B0 /* OpenUDID.m in Sources */,
+				23FC78CA159401F1002C1A53 /* UIDevice-Hardware.m in Sources */,
+				23FC78D815940212002C1A53 /* NSString+MD5.m in Sources */,
+				23FC78DA15940212002C1A53 /* TapadEvent.m in Sources */,
+				23FC78DC15940212002C1A53 /* TapadIdentifiers.m in Sources */,
+				23FC78DE15940212002C1A53 /* TapadPreferences.m in Sources */,
+				23FC78E015940212002C1A53 /* TapadRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

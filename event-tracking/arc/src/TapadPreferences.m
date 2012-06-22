@@ -14,6 +14,7 @@ static NSString* kTAPAD_IS_FIRST_RUN = @"Tapad First run";
 static NSString* kTAPAD_OPT_OUT = @"Tapad Opt-out";
 static NSString* kTAPAD_GEO_OPT_IN = @"Tapad Geo Opt-in";
 static NSString* kTAPAD_APP_ID = @"Tapad App Id";
+static NSString* kTAPAD_IDENTIFIER_PREFIX = @"Tapad Identifier";
 
 + (BOOL) registerDefaults {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -51,6 +52,16 @@ static NSString* kTAPAD_APP_ID = @"Tapad App Id";
     return defaultValue;
 }
 
++ (BOOL) willSendIdFor:(NSString*)method {
+    BOOL defaultValue = [[NSUserDefaults standardUserDefaults] boolForKey:[NSString stringWithFormat:@"%@ %@", kTAPAD_IDENTIFIER_PREFIX, method]];
+    return defaultValue;
+}
+
++ (void) setSendIdFor:(NSString *)method to:(BOOL)state {
+    [[NSUserDefaults standardUserDefaults] setBool:state forKey:[NSString stringWithFormat:@"%@ %@", kTAPAD_IDENTIFIER_PREFIX, method]];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 // the user defaults this value to "YES", so the first call should return YES
 // if the first parameter is YES, then the call will flip the value to NO,
 // and return the value that was previously there
@@ -59,6 +70,7 @@ static NSString* kTAPAD_APP_ID = @"Tapad App Id";
     
     if (firstTime && change) {
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kTAPAD_IS_FIRST_RUN];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
     return firstTime;
 }
