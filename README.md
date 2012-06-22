@@ -26,9 +26,9 @@ Setup Your Environment
 Event Tracking
 ==============
 
-The Tapad Event Tracking SDK and sample apps are located in [event-tracking](event-tracking). Please refer to the README inside for additional information.
+The Tapad Event Tracking SDK and sample apps are located in `event-tracking`. Please refer to the README inside for additional information.
 
 Ad Serving
 ==============
 
-The Tapad Ad SDK and sample apps are located in [adserving](adserving). Please refer to the README inside for additional information.
+The Tapad Ad SDK and sample apps are located in `adserving`. Please refer to the README inside for additional information.
