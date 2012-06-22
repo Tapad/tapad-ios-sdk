@@ -49,12 +49,12 @@
 		2392B181159403D100DE2CD5 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenUDID.m; path = ../arc/OpenUDID/OpenUDID.m; sourceTree = "<group>"; };
 		2392B184159403F100DE2CD5 /* UIDevice-Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice-Hardware.h"; path = "../arc/UIDevice-Hardware/UIDevice-Hardware.h"; sourceTree = "<group>"; };
 		2392B185159403F100DE2CD5 /* UIDevice-Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice-Hardware.m"; path = "../arc/UIDevice-Hardware/UIDevice-Hardware.m"; sourceTree = "<group>"; };
-		2392B18F1594049900DE2CD5 /* MyEnabledTapadIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEnabledTapadIdentifiers.h; sourceTree = "<group>"; };
 		23B83F1014210534003DAFFE /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23B83F1414210534003DAFFE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		23B83F1614210534003DAFFE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		23B83F1814210534003DAFFE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		23B83F2214210534003DAFFE /* DemoApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DemoApp-Prefix.pch"; sourceTree = "<group>"; };
+		23D5C9CF159408DC000E92C2 /* MyEnabledTapadIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEnabledTapadIdentifiers.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,9 +119,9 @@
 		23A4CFEE14212DBC006ADF52 /* DemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				23D5C9CF159408DC000E92C2 /* MyEnabledTapadIdentifiers.h */,
 				23561CFA14212EFC0090FA71 /* TapadEvent */,
 				23B83F1B14210534003DAFFE /* Supporting Files */,
-				2392B18F1594049900DE2CD5 /* MyEnabledTapadIdentifiers.h */,
 				237C713514210758002DF422 /* DemoAppAppDelegate.h */,
 				237C713614210758002DF422 /* DemoAppAppDelegate.m */,
 				237C713714210758002DF422 /* DemoAppViewController.h */,
