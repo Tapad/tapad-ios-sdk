@@ -21,7 +21,7 @@
      */
 
     // Uncomment if supplied with an app id from Tapad.  If unspecified, the app id is set to the CFBundleName.
-    [TapadEvent registerAppWithId:@"Tapad Tracking SDK (non-arc) Demo App"];
+    [TapadEvent registerAppWithId:@"Tapad Tracking SDK (arc) Demo App"];
 
     // reset all Identifier config
     [self resetIdentifierConfig];
