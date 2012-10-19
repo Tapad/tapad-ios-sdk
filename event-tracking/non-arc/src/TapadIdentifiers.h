@@ -10,6 +10,11 @@
 // edit this header file to enable identifiers allowed for your app
 #import "MyEnabledTapadIdentifiers.h"
 
+#ifdef TAPAD_IDENTIFIER_ENABLE_ADVERTISING_IDENTIFIER
+#import <ADSupport/ASIdentifierManager.h>
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#endif
+
 @interface TapadIdentifiers : NSObject {}
 
 #ifdef TAPAD_IDENTIFIER_ENABLE_OPENUDID
@@ -45,6 +50,11 @@
 #ifdef TAPAD_IDENTIFIER_ENABLE_SHA1_HASHED_MAC
 + (BOOL) willSendSHA1HashedMAC;
 + (void) sendSHA1HashedMAC:(BOOL)state;
+#endif
+
+#ifdef TAPAD_IDENTIFIER_ENABLE_ADVERTISING_IDENTIFIER
++ (BOOL) willSendAdvertisingIdentifier;
++ (void) sendAdvertisingIdentifier:(BOOL)state;
 #endif
 
 + (NSString*) deviceID;

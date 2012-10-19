@@ -27,6 +27,7 @@ In `- (void)applicationDidFinishLaunching:(UIApplication *)application` of the m
   [TapadIdentifiers sendOpenUDID:YES];
   [TapadIdentifiers sendMD5HashedMAC:YES];
   [TapadIdentifiers sendSHA1HashedMAC:YES];
+  [TapadIdentifiers sendAdvertisingIdentifier:YES];
   ...
 
   // trigger the application install tracking

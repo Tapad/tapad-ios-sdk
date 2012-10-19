@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2312579A1631214500EDFF3A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 231257991631214500EDFF3A /* Default-568h@2x.png */; };
+		2312579C1631227500EDFF3A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2312579B1631227500EDFF3A /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		237C713914210758002DF422 /* DemoAppAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 237C713614210758002DF422 /* DemoAppAppDelegate.m */; };
 		237C713A14210758002DF422 /* DemoAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 237C713814210758002DF422 /* DemoAppViewController.m */; };
 		237C713E1421081B002DF422 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 237C713D1421081B002DF422 /* main.m */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		231257991631214500EDFF3A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		2312579B1631227500EDFF3A /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		237C713514210758002DF422 /* DemoAppAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemoAppAppDelegate.h; path = Classes/DemoAppAppDelegate.h; sourceTree = SOURCE_ROOT; };
 		237C713614210758002DF422 /* DemoAppAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemoAppAppDelegate.m; path = Classes/DemoAppAppDelegate.m; sourceTree = SOURCE_ROOT; };
 		237C713714210758002DF422 /* DemoAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemoAppViewController.h; path = Classes/DemoAppViewController.h; sourceTree = SOURCE_ROOT; };
@@ -65,6 +69,7 @@
 				23B83F1514210534003DAFFE /* UIKit.framework in Frameworks */,
 				23B83F1714210534003DAFFE /* Foundation.framework in Frameworks */,
 				23B83F1914210534003DAFFE /* CoreGraphics.framework in Frameworks */,
+				2312579C1631227500EDFF3A /* AdSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +114,7 @@
 		23B83F0514210534003DAFFE = {
 			isa = PBXGroup;
 			children = (
+				231257991631214500EDFF3A /* Default-568h@2x.png */,
 				23A4CFEE14212DBC006ADF52 /* DemoApp */,
 				23B83F1314210534003DAFFE /* Frameworks */,
 				23B83F1114210534003DAFFE /* Products */,
@@ -129,6 +135,7 @@
 				23B83F1414210534003DAFFE /* UIKit.framework */,
 				23B83F1614210534003DAFFE /* Foundation.framework */,
 				23B83F1814210534003DAFFE /* CoreGraphics.framework */,
+				2312579B1631227500EDFF3A /* AdSupport.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -197,7 +204,7 @@
 		23B83F0714210534003DAFFE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0450;
 			};
 			buildConfigurationList = 23B83F0A14210534003DAFFE /* Build configuration list for PBXProject "DemoApp" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -224,6 +231,7 @@
 				237C71411421085E002DF422 /* InfoPlist.strings in Resources */,
 				237C714614210873002DF422 /* MainStoryboard_iPad.storyboard in Resources */,
 				237C714714210873002DF422 /* MainStoryboard_iPhone.storyboard in Resources */,
+				2312579A1631214500EDFF3A /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

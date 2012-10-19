@@ -43,6 +43,10 @@
 +(NSString*) fetchSHA1HashedMAC;
 #endif
 
+#ifdef TAPAD_IDENTIFIER_ENABLE_ADVERTISING_IDENTIFIER
++(NSString*) fetchAdvertisingIdentifier;
+#endif
+
 +(NSString*) defaultDeviceID;
 @end
 
@@ -223,6 +227,33 @@ static NSString* kTYPE_SHA1_HASHED_MAC = @"6";
 }
 #endif
 
+#ifdef TAPAD_IDENTIFIER_ENABLE_ADVERTISING_IDENTIFIER
+static NSString* kMETHOD_ADVERTISING_IDENTIFIER = @"Advertising Identifier";
+static NSString* kTYPE_ADVERTISING_IDENTIFIER = @"7";
+
++ (BOOL) willSendAdvertisingIdentifier {
+    return [TapadPreferences willSendIdFor:kMETHOD_ADVERTISING_IDENTIFIER];
+}
+
++ (void) sendAdvertisingIdentifier:(BOOL)state {
+    [TapadPreferences setSendIdFor:kMETHOD_ADVERTISING_IDENTIFIER to:state];
+}
+
++ (NSString*) fetchAdvertisingIdentifier {
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"6.0")) {
+        if ([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]) {
+            return [NSString stringWithFormat:@"%@:%@", kTYPE_ADVERTISING_IDENTIFIER, [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString]];
+        }
+        else {
+            return [NSString stringWithFormat:@"%@:%@", kTYPE_ADVERTISING_IDENTIFIER, @"0"];
+        }
+    }
+    else {
+        return [NSString stringWithFormat:@"%@:%@", kTYPE_ADVERTISING_IDENTIFIER, @"0"];
+    }
+}
+#endif
+
 + (NSString*) deviceID {
     NSMutableArray* ids = [NSMutableArray arrayWithCapacity:7]; // autoreleased
 
@@ -268,6 +299,12 @@ static NSString* kTYPE_SHA1_HASHED_MAC = @"6";
     }
 #endif
 
+#ifdef TAPAD_IDENTIFIER_ENABLE_ADVERTISING_IDENTIFIER
+    if ([TapadIdentifiers willSendAdvertisingIdentifier]) {
+        [ids addObject:[TapadIdentifiers fetchAdvertisingIdentifier]];
+    }
+#endif
+    
     if ([ids count] == 0) {
         return [TapadIdentifiers defaultDeviceID];
     }

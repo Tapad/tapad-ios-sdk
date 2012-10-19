@@ -20,6 +20,8 @@
      Add launch tracking logic here.
      */
 
+    NSLog(@"App Started");
+    
     // Uncomment if supplied with an app id from Tapad.  If unspecified, the app id is set to the CFBundleName.
     [TapadEvent registerAppWithId:@"Tapad Tracking SDK (non-arc) Demo App"];
 
@@ -38,7 +40,8 @@
     [NSTimer scheduledTimerWithTimeInterval:12 target:self selector:@selector(testEventWithSHA1HashedUDID) userInfo:nil repeats:NO];
     [NSTimer scheduledTimerWithTimeInterval:14 target:self selector:@selector(testEventWithMD5HashedMAC) userInfo:nil repeats:NO];
     [NSTimer scheduledTimerWithTimeInterval:16 target:self selector:@selector(testEventWithSHA1HashedMAC) userInfo:nil repeats:NO];
-    [NSTimer scheduledTimerWithTimeInterval:18 target:self selector:@selector(testEventWithAllIdentifiers) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:18 target:self selector:@selector(testEventWithAdvertisingIdentifier) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:20 target:self selector:@selector(testEventWithAllIdentifiers) userInfo:nil repeats:NO];
 }
 
 - (void) resetIdentifierConfig {
@@ -50,6 +53,7 @@
     [TapadIdentifiers sendSHA1HashedUDID:NO];
     [TapadIdentifiers sendMD5HashedMAC:NO];
     [TapadIdentifiers sendSHA1HashedMAC:NO];
+    [TapadIdentifiers sendAdvertisingIdentifier:NO];
 }
 
 - (void) testEventWithNoIdentifier {
@@ -129,6 +133,16 @@
     [TapadEvent send:@"SHA1HashedMAC specified"];
 }
 
+- (void) testEventWithAdvertisingIdentifier {
+    [self resetIdentifierConfig];
+    
+    // enable iOS 6 Advertising Identifier
+    [TapadIdentifiers sendAdvertisingIdentifier:YES];
+    
+    // send test event with iOS 6 Advertising Identifier enabled
+    [TapadEvent send:@"Advertising Identifier specified"];
+}
+
 - (void) testEventWithAllIdentifiers {
     [self resetIdentifierConfig];
 
@@ -140,6 +154,7 @@
     [TapadIdentifiers sendSHA1HashedUDID:YES];
     [TapadIdentifiers sendMD5HashedMAC:YES];
     [TapadIdentifiers sendSHA1HashedMAC:YES];
+    [TapadIdentifiers sendAdvertisingIdentifier:YES];
     
     // send test event with all identifiers enabled
     [TapadEvent send:@"all identifiers enabled"];
