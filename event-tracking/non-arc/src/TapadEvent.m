@@ -14,11 +14,13 @@
 
 @synthesize name;
 @synthesize appId;
+@synthesize extraParams;
 
--(id)initWithName:(NSString *)initname appId:(NSString *)initAppId{
+-(id)initWithName:(NSString *)initname appId:(NSString *)initAppId extraParams:(NSString *)initExtraParams {
     self = [super init];
     self.name = initname;
     self.appId = initAppId;
+    self.extraParams = initExtraParams;
     return self;
 }
 
@@ -30,9 +32,21 @@
     [TapadPreferences setTapadAppId:appId];
 }
 
++ (void) registerCustomDataForKey:(NSString*)key value:(NSString*)value {
+    [TapadPreferences setCustomDataForKey:key value:value];
+}
+
++ (void) clearCustomDataForKey:(NSString*)key {
+    [TapadPreferences removeCustomDataForKey:key];
+}
+
++ (void) clearAllCustomData {
+    [TapadPreferences clearAllCustomData];
+}
+
 + (BOOL) send:(NSString *)eventName {
     
-    TapadEvent* event = [[[TapadEvent alloc] initWithName:eventName appId:[TapadPreferences getTapadAppId]] autorelease];
+    TapadEvent* event = [[[TapadEvent alloc] initWithName:eventName appId:[TapadPreferences getTapadAppId] extraParams:[TapadPreferences getCustomDataAsSingleEncodedString]] autorelease];
 
     // todo: should we hold on to this object?
     dispatch_queue_t tapadq = dispatch_queue_create("Tapad Events Queue", NULL); 

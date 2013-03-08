@@ -15,6 +15,7 @@ static NSString* kTAPAD_OPT_OUT = @"Tapad Opt-out";
 static NSString* kTAPAD_GEO_OPT_IN = @"Tapad Geo Opt-in";
 static NSString* kTAPAD_APP_ID = @"Tapad App Id";
 static NSString* kTAPAD_IDENTIFIER_PREFIX = @"Tapad Identifier";
+static NSString* kTAPAD_CUSTOM_DATA = @"Tapad Custom Data";
 
 + (BOOL) registerDefaults {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -24,6 +25,7 @@ static NSString* kTAPAD_IDENTIFIER_PREFIX = @"Tapad Identifier";
                                  [NSNumber numberWithBool:NO], kTAPAD_OPT_OUT,
                                  [NSNumber numberWithBool:NO], kTAPAD_GEO_OPT_IN,
                                  [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"], kTAPAD_APP_ID,
+                                 [NSDictionary dictionary], kTAPAD_CUSTOM_DATA,
                                  nil
                                  ];
     
@@ -60,6 +62,50 @@ static NSString* kTAPAD_IDENTIFIER_PREFIX = @"Tapad Identifier";
 + (void) setSendIdFor:(NSString *)method to:(BOOL)state {
     [[NSUserDefaults standardUserDefaults] setBool:state forKey:[NSString stringWithFormat:@"%@ %@", kTAPAD_IDENTIFIER_PREFIX, method]];
     [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (void) setCustomDataForKey:(NSString*)key value:(NSString*)value {
+    NSDictionary* existingCustomData = [[NSUserDefaults standardUserDefaults] objectForKey:kTAPAD_CUSTOM_DATA];
+    NSMutableDictionary* newCustomData = [NSMutableDictionary dictionaryWithDictionary:existingCustomData];
+    [newCustomData setObject:value forKey: key];
+    [[NSUserDefaults standardUserDefaults] setObject:newCustomData forKey:kTAPAD_CUSTOM_DATA];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (void) removeCustomDataForKey:(NSString*)key {
+    NSDictionary* existingCustomData = [[NSUserDefaults standardUserDefaults] objectForKey:kTAPAD_CUSTOM_DATA];
+    NSMutableDictionary* newCustomData = [NSMutableDictionary dictionaryWithDictionary:existingCustomData];
+    [newCustomData removeObjectForKey:key];
+    [[NSUserDefaults standardUserDefaults] setObject:newCustomData forKey:kTAPAD_CUSTOM_DATA];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (void) clearAllCustomData {
+    [[NSUserDefaults standardUserDefaults] setObject:[NSDictionary dictionary] forKey:kTAPAD_CUSTOM_DATA];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (NSString*) getCustomDataAsSingleEncodedString {
+    NSDictionary* existingCustomData = [[NSUserDefaults standardUserDefaults] objectForKey:kTAPAD_CUSTOM_DATA];
+    NSMutableArray* params = [NSMutableArray arrayWithCapacity:[existingCustomData count]]; // autoreleased
+    for (id key in existingCustomData) {
+        id value = [existingCustomData objectForKey:key];
+        [params addObject:[NSString stringWithFormat:@"%@=%@", [TapadPreferences encodeString:key], [TapadPreferences encodeString:value] ]];
+    }
+    if ([params count] == 0) {
+        return NULL;
+    }
+    else {
+        return [TapadPreferences encodeString:[params componentsJoinedByString:@"&"]];
+    }
+}
+
++ (NSString*) encodeString: (id) unencodedString {
+  return (NSString *)CFURLCreateStringByAddingPercentEscapes(NULL,
+                                                             (CFStringRef)unencodedString,
+                                                             NULL,
+                                                             (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                             kCFStringEncodingUTF8);
 }
 
 // the user defaults this value to "YES", so the first call should return YES

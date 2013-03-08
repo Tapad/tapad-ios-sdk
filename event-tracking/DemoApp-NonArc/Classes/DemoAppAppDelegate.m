@@ -42,6 +42,7 @@
     [NSTimer scheduledTimerWithTimeInterval:16 target:self selector:@selector(testEventWithSHA1HashedMAC) userInfo:nil repeats:NO];
     [NSTimer scheduledTimerWithTimeInterval:18 target:self selector:@selector(testEventWithAdvertisingIdentifier) userInfo:nil repeats:NO];
     [NSTimer scheduledTimerWithTimeInterval:20 target:self selector:@selector(testEventWithAllIdentifiers) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:22 target:self selector:@selector(testEventWithAllIdentifiersAndExtraParams) userInfo:nil repeats:NO];
 }
 
 - (void) resetIdentifierConfig {
@@ -160,4 +161,27 @@
     [TapadEvent send:@"all identifiers enabled"];
 }
 
+- (void) testEventWithAllIdentifiersAndExtraParams {
+    [self resetIdentifierConfig];
+    
+    // enable all identifiers
+    [TapadIdentifiers sendOpenUDID:YES];
+    [TapadIdentifiers sendMD5HashedRawMAC:YES];
+    [TapadIdentifiers sendSHA1HashedRawMAC:YES];
+    [TapadIdentifiers sendMD5HashedUDID:YES];
+    [TapadIdentifiers sendSHA1HashedUDID:YES];
+    [TapadIdentifiers sendMD5HashedMAC:YES];
+    [TapadIdentifiers sendSHA1HashedMAC:YES];
+    [TapadIdentifiers sendAdvertisingIdentifier:YES];
+
+    // configure extra params
+    [TapadEvent registerCustomDataForKey:@"EXTRA_DATA_1" value:@"foo&123"];
+    [TapadEvent registerCustomDataForKey:@"SPECIAL DATA 2" value:@"bar=567"];
+    [TapadEvent registerCustomDataForKey:@"DATA NOT TO BE SENT" value:@"baz999"];
+    // remove the custom data that is not to be sent any more
+    [TapadEvent clearCustomDataForKey:@"DATA NOT TO BE SENT"];
+    
+    // send test event with all identifiers enabled and extra params
+    [TapadEvent send:@"all identifiers enabled with extra params"];
+}
 @end

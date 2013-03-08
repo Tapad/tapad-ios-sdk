@@ -34,17 +34,29 @@
 @interface TapadEvent : NSObject {
     NSString* name;
     NSString* appId;
+    NSString* extraParams;
 }
 
 @property (nonatomic,copy) NSString* name;
 @property (nonatomic,copy) NSString* appId;
+@property (nonatomic,copy) NSString* extraParams;
 
 
-- (id)initWithName:(NSString*)name appId:(NSString*)appId;
+- (id)initWithName:(NSString*)name appId:(NSString*)appId extraParams:(NSString*)extraParams;
 
 // register an app id with the library, if pre-given to the developer.
 // the app id defaults to CFBundleName if not set
 + (void) registerAppWithId:(NSString*)appId;
+
+// registers custom key value pair that will be sent with every subsequent event
+// registration of a new value with an existing key will override the existing value
++ (void) registerCustomDataForKey:(NSString*)key value:(NSString*)value;
+
+// removes the value associated with a custom data key
++ (void) clearCustomDataForKey:(NSString*)key;
+
+// remove all custom data key and value pairs
++ (void) clearAllCustomData;
 
 // construct and send event, returns YES if successfully scheduled
 + (BOOL) send:(NSString *)eventName; 

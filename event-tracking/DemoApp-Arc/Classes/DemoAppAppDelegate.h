@@ -27,5 +27,6 @@
 - (void) testEventWithSHA1HashedMAC;
 - (void) testEventWithAdvertisingIdentifier;
 - (void) testEventWithAllIdentifiers;
+- (void) testEventWithAllIdentifiersAndExtraParams;
 
 @end

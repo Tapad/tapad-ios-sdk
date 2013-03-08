@@ -19,6 +19,10 @@
 + (NSString*) getTapadAppId;
 + (BOOL) willSendIdFor:(NSString*)method;
 + (void) setSendIdFor:(NSString*)method to:(BOOL)state;
++ (void) setCustomDataForKey:(NSString*)key value:(NSString*)value;
++ (void) removeCustomDataForKey:(NSString*)key;
++ (void) clearAllCustomData;
++ (NSString*) getCustomDataAsSingleEncodedString;
 
 // the user defaults this value to "YES", so the first call should return YES
 // if the first parameter is YES, then the call will flip the value to NO,

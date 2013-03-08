@@ -22,10 +22,7 @@
     @property (nonatomic,copy) NSString* port;
     @property (nonatomic,copy) NSString* partner;
 
-- (id) initializeRequestFromRawUrl:(NSString*)rawUrlStr;
 - (NSString*) stringWithDeviceParams;
-
-
 - (id) initWithEvent:(TapadEvent *)event;
 
 
@@ -59,6 +56,7 @@
 static NSString*const kuid           =@"device_id";
 static NSString*const ktypedUid      =@"typed_device_id";
 static NSString*const kplatform      =@"platform";
+static NSString*const kextraParams   =@"extra_params";
 
 + (TapadRequest*) requestForEvent:(TapadEvent*)event {
     TapadRequest* request = [[TapadRequest alloc] initWithEvent:event];
@@ -84,37 +82,34 @@ static NSString*const kplatform      =@"platform";
 }
 
 - (id) initWithEvent:(TapadEvent*)event{
-    if ([self init]) { // note: not super init!
+    if (self = [self init]) { // note: not super init!
         
-        NSString *rawUrlStr = [NSString stringWithFormat:@"%@://%@%@/app/event?action_id=%@&app_id=%@&%@",
-                               protocol, dns, port,
-                               event.name,
-                               event.appId,
-                               [self stringWithDeviceParams]
-                               ];
+        NSString *rawUrlStrWithoutExtraParams = [NSString stringWithFormat:@"%@://%@%@/app/event?action_id=%@&app_id=%@&%@",
+                                                 protocol, dns, port,
+                                                 event.name,
+                                                 event.appId,
+                                                 [self stringWithDeviceParams]
+                                                 ];
 
-        self = [self initializeRequestFromRawUrl:rawUrlStr];
-
+        NSString *encodedUrlStrWithoutExtraParams = [rawUrlStrWithoutExtraParams stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]; // autoreleased
+        NSString *urlString = NULL;
+        if (event.extraParams == NULL) {
+            urlString = encodedUrlStrWithoutExtraParams;
+        }
+        else {
+            urlString = [NSString stringWithFormat:@"%@&%@=%@", encodedUrlStrWithoutExtraParams, kextraParams, event.extraParams];
+        }
+        
+        NSLog(@"raw request=[%@]",urlString);
+        
+        NSURL* url =  [[NSURL alloc] initWithString:urlString];
+        
+        self.request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:kTimeout]; // autoreleased=>retained
     }
     return self;  
 }
 
 static const float kTimeout = 2.5;
-
--(id) initializeRequestFromRawUrl:(NSString*)rawUrlStr {
-    
-    NSString *urlString = [rawUrlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]; // autoreleased
-    
-    NSLog(@"raw request=[%@]",urlString);
-
-    NSURL* url =  [[NSURL alloc] initWithString:urlString];
-    
-    self.request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:kTimeout]; // autoreleased=>retained
-
-    return self;
-}
-
-
 
 - (void)dealloc {
     // will release as necessary
