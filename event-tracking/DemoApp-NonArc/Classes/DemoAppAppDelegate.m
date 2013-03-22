@@ -36,13 +36,11 @@
     [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(testEventWithOpenUDID) userInfo:nil repeats:NO];
     [NSTimer scheduledTimerWithTimeInterval:6 target:self selector:@selector(testEventWithMD5HashedRawMAC) userInfo:nil repeats:NO];
     [NSTimer scheduledTimerWithTimeInterval:8 target:self selector:@selector(testEventWithSHA1HashedRawMAC) userInfo:nil repeats:NO];
-    [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(testEventWithMD5HashedUDID) userInfo:nil repeats:NO];
-    [NSTimer scheduledTimerWithTimeInterval:12 target:self selector:@selector(testEventWithSHA1HashedUDID) userInfo:nil repeats:NO];
-    [NSTimer scheduledTimerWithTimeInterval:14 target:self selector:@selector(testEventWithMD5HashedMAC) userInfo:nil repeats:NO];
-    [NSTimer scheduledTimerWithTimeInterval:16 target:self selector:@selector(testEventWithSHA1HashedMAC) userInfo:nil repeats:NO];
-    [NSTimer scheduledTimerWithTimeInterval:18 target:self selector:@selector(testEventWithAdvertisingIdentifier) userInfo:nil repeats:NO];
-    [NSTimer scheduledTimerWithTimeInterval:20 target:self selector:@selector(testEventWithAllIdentifiers) userInfo:nil repeats:NO];
-    [NSTimer scheduledTimerWithTimeInterval:22 target:self selector:@selector(testEventWithAllIdentifiersAndExtraParams) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(testEventWithMD5HashedMAC) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:12 target:self selector:@selector(testEventWithSHA1HashedMAC) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:14 target:self selector:@selector(testEventWithAdvertisingIdentifier) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:16 target:self selector:@selector(testEventWithAllIdentifiers) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:18 target:self selector:@selector(testEventWithAllIdentifiersAndExtraParams) userInfo:nil repeats:NO];
 }
 
 - (void) resetIdentifierConfig {
@@ -50,8 +48,6 @@
     [TapadIdentifiers sendOpenUDID:NO];
     [TapadIdentifiers sendMD5HashedRawMAC:NO];
     [TapadIdentifiers sendSHA1HashedRawMAC:NO];
-    [TapadIdentifiers sendMD5HashedUDID:NO];
-    [TapadIdentifiers sendSHA1HashedUDID:NO];
     [TapadIdentifiers sendMD5HashedMAC:NO];
     [TapadIdentifiers sendSHA1HashedMAC:NO];
     [TapadIdentifiers sendAdvertisingIdentifier:NO];
@@ -94,26 +90,6 @@
     [TapadEvent send:@"SHA1HashedRawMAC specified"];
 }
 
-- (void) testEventWithMD5HashedUDID {
-    [self resetIdentifierConfig];
-    
-    // enable MD5 Hashed UDID
-    [TapadIdentifiers sendMD5HashedUDID:YES];
-    
-    // send test event with MD5 Hashed UDID enabled
-    [TapadEvent send:@"MD5HashedUDID specified"];
-}
-
-- (void) testEventWithSHA1HashedUDID {
-    [self resetIdentifierConfig];
-    
-    // enable SHA1 Hashed UDID
-    [TapadIdentifiers sendSHA1HashedUDID:YES];
-    
-    // send test event with SHA1 Hashed UDID enabled
-    [TapadEvent send:@"SHA1HashedUDID specified"];
-}
-
 - (void) testEventWithMD5HashedMAC {
     [self resetIdentifierConfig];
     
@@ -151,8 +127,6 @@
     [TapadIdentifiers sendOpenUDID:YES];
     [TapadIdentifiers sendMD5HashedRawMAC:YES];
     [TapadIdentifiers sendSHA1HashedRawMAC:YES];
-    [TapadIdentifiers sendMD5HashedUDID:YES];
-    [TapadIdentifiers sendSHA1HashedUDID:YES];
     [TapadIdentifiers sendMD5HashedMAC:YES];
     [TapadIdentifiers sendSHA1HashedMAC:YES];
     [TapadIdentifiers sendAdvertisingIdentifier:YES];
@@ -168,8 +142,6 @@
     [TapadIdentifiers sendOpenUDID:YES];
     [TapadIdentifiers sendMD5HashedRawMAC:YES];
     [TapadIdentifiers sendSHA1HashedRawMAC:YES];
-    [TapadIdentifiers sendMD5HashedUDID:YES];
-    [TapadIdentifiers sendSHA1HashedUDID:YES];
     [TapadIdentifiers sendMD5HashedMAC:YES];
     [TapadIdentifiers sendSHA1HashedMAC:YES];
     [TapadIdentifiers sendAdvertisingIdentifier:YES];

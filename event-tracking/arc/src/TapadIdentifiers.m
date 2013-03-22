@@ -27,14 +27,6 @@
 +(NSString*) fetchSHA1HashedRawMAC;
 #endif
 
-#ifdef TAPAD_IDENTIFIER_ENABLE_MD5_HASHED_UDID
-+(NSString*) fetchMD5HashedUDID;
-#endif
-
-#ifdef TAPAD_IDENTIFIER_ENABLE_SHA1_HASHED_UDID
-+(NSString*) fetchSHA1HashedUDID;
-#endif
-
 #ifdef TAPAD_IDENTIFIER_ENABLE_MD5_HASHED_MAC
 +(NSString*) fetchMD5HashedMAC;
 #endif
@@ -139,50 +131,6 @@ static NSString* kTYPE_SHA1_HASHED_RAW_MAC = @"2";
 }
 #endif
 
-#ifdef TAPAD_IDENTIFIER_ENABLE_MD5_HASHED_UDID
-static NSString* kMETHOD_MD5_HASHED_UDID = @"MD5 Hashed UDID";
-static NSString* kTYPE_MD5_HASHED_UDID = @"3";
-
-+ (BOOL) willSendMD5HashedUDID {
-    return [TapadPreferences willSendIdFor:kMETHOD_MD5_HASHED_UDID];
-}
-
-+ (void) sendMD5HashedUDID:(BOOL)state {
-    [TapadPreferences setSendIdFor:kMETHOD_MD5_HASHED_UDID to:state];
-}
-
-+ (NSString*) fetchMD5HashedUDID {
-    if ([[UIDevice currentDevice] uniqueIdentifier] == NULL) {
-        return [NSString stringWithFormat:@"%@:%@", kTYPE_MD5_HASHED_UDID, @"0"];
-    }
-    else {
-        return [NSString stringWithFormat:@"%@:%@", kTYPE_MD5_HASHED_UDID, [[[UIDevice currentDevice] uniqueIdentifier] MD5]];
-    }
-}
-#endif
-
-#ifdef TAPAD_IDENTIFIER_ENABLE_SHA1_HASHED_UDID
-static NSString* kMETHOD_SHA1_HASHED_UDID = @"SHA1 Hashed UDID";
-static NSString* kTYPE_SHA1_HASHED_UDID = @"4";
-
-+ (BOOL) willSendSHA1HashedUDID {
-    return [TapadPreferences willSendIdFor:kMETHOD_SHA1_HASHED_UDID];
-}
-
-+ (void) sendSHA1HashedUDID:(BOOL)state {
-    [TapadPreferences setSendIdFor:kMETHOD_SHA1_HASHED_UDID to:state];
-}
-
-+ (NSString*) fetchSHA1HashedUDID {
-    if ([[UIDevice currentDevice] uniqueIdentifier] == NULL) {
-        return [NSString stringWithFormat:@"%@:%@", kTYPE_SHA1_HASHED_UDID, @"0"];
-    }
-    else {
-        return [NSString stringWithFormat:@"%@:%@", kTYPE_SHA1_HASHED_UDID, [[[UIDevice currentDevice] uniqueIdentifier] SHA1]];
-    }
-}
-#endif
-
 #ifdef TAPAD_IDENTIFIER_ENABLE_MD5_HASHED_MAC
 static NSString* kMETHOD_MD5_HASHED_MAC = @"MD5 Hashed MAC";
 static NSString* kTYPE_MD5_HASHED_MAC = @"5";
@@ -272,18 +220,6 @@ static NSString* kTYPE_ADVERTISING_IDENTIFIER = @"7";
 #ifdef TAPAD_IDENTIFIER_ENABLE_SHA1_HASHED_RAW_MAC
     if ([TapadIdentifiers willSendSHA1HashedRawMAC]) {
         [ids addObject:[TapadIdentifiers fetchSHA1HashedRawMAC]];
-    }
-#endif
-
-#ifdef TAPAD_IDENTIFIER_ENABLE_MD5_HASHED_UDID
-    if ([TapadIdentifiers willSendMD5HashedUDID]) {
-        [ids addObject:[TapadIdentifiers fetchMD5HashedUDID]];
-    }
-#endif
-
-#ifdef TAPAD_IDENTIFIER_ENABLE_SHA1_HASHED_UDID
-    if ([TapadIdentifiers willSendSHA1HashedUDID]) {
-        [ids addObject:[TapadIdentifiers fetchSHA1HashedUDID]];
     }
 #endif
 
