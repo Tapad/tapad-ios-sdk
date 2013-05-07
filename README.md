@@ -1,5 +1,5 @@
 Tapad iOS SDK
-===========================
+=============
 
 This open source iOS library allows you to integrate Tapad features into your iOS application include iPhone, iPad and iPod touch.
 
@@ -29,6 +29,13 @@ Event Tracking
 The Tapad Event Tracking SDK and sample apps are located in `event-tracking`. Please refer to the README inside for additional information.
 
 Ad Serving
-==============
+==========
 
 The Tapad Ad SDK and sample apps are located in `adserving`. Please refer to the README inside for additional information.
+
+License
+=======
+
+Copyright (c) 2012-2013 Tapad, INC.
+
+Published under The MIT License, see LICENSE
