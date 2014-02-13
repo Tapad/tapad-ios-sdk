@@ -39,8 +39,9 @@
     [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(testEventWithMD5HashedMAC) userInfo:nil repeats:NO];
     [NSTimer scheduledTimerWithTimeInterval:12 target:self selector:@selector(testEventWithSHA1HashedMAC) userInfo:nil repeats:NO];
     [NSTimer scheduledTimerWithTimeInterval:14 target:self selector:@selector(testEventWithAdvertisingIdentifier) userInfo:nil repeats:NO];
-    [NSTimer scheduledTimerWithTimeInterval:16 target:self selector:@selector(testEventWithAllIdentifiers) userInfo:nil repeats:NO];
-    [NSTimer scheduledTimerWithTimeInterval:18 target:self selector:@selector(testEventWithAllIdentifiersAndExtraParams) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:16 target:self selector:@selector(testEventWithIdentifierForVendor) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:18 target:self selector:@selector(testEventWithAllIdentifiers) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:20 target:self selector:@selector(testEventWithAllIdentifiersAndExtraParams) userInfo:nil repeats:NO];
 }
 
 - (void) resetIdentifierConfig {
@@ -51,6 +52,7 @@
     [TapadIdentifiers sendMD5HashedMAC:NO];
     [TapadIdentifiers sendSHA1HashedMAC:NO];
     [TapadIdentifiers sendAdvertisingIdentifier:NO];
+    [TapadIdentifiers sendIdentifierForVendor:NO];
 }
 
 - (void) testEventWithNoIdentifier {
@@ -120,6 +122,16 @@
     [TapadEvent send:@"Advertising Identifier specified"];
 }
 
+- (void) testEventWithIdentifierForVendor {
+    [self resetIdentifierConfig];
+    
+    // enable iOS 6 Identifier For Vendor
+    [TapadIdentifiers sendIdentifierForVendor:YES];
+    
+    // send test event with iOS 6 Identifier For Vendor enabled
+    [TapadEvent send:@"Identifier For Vendor specified"];
+}
+
 - (void) testEventWithAllIdentifiers {
     [self resetIdentifierConfig];
 
@@ -130,6 +142,7 @@
     [TapadIdentifiers sendMD5HashedMAC:YES];
     [TapadIdentifiers sendSHA1HashedMAC:YES];
     [TapadIdentifiers sendAdvertisingIdentifier:YES];
+    [TapadIdentifiers sendIdentifierForVendor:YES];
     
     // send test event with all identifiers enabled
     [TapadEvent send:@"all identifiers enabled"];
@@ -145,6 +158,7 @@
     [TapadIdentifiers sendMD5HashedMAC:YES];
     [TapadIdentifiers sendSHA1HashedMAC:YES];
     [TapadIdentifiers sendAdvertisingIdentifier:YES];
+    [TapadIdentifiers sendIdentifierForVendor:YES];
     
     // configure extra params
     [TapadEvent registerCustomDataForKey:@"EXTRA_DATA_1" value:@"foo&123"];

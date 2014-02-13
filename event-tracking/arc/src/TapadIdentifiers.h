@@ -12,6 +12,9 @@
 
 #ifdef TAPAD_IDENTIFIER_ENABLE_ADVERTISING_IDENTIFIER
 #import <ADSupport/ASIdentifierManager.h>
+#endif
+
+#if defined(TAPAD_IDENTIFIER_ENABLE_ADVERTISING_IDENTIFIER) || defined(TAPAD_IDENTIFIER_ENABLE_IDENTIFIER_FOR_VENDOR)
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 #endif
 
@@ -45,6 +48,11 @@
 #ifdef TAPAD_IDENTIFIER_ENABLE_ADVERTISING_IDENTIFIER
 + (BOOL) willSendAdvertisingIdentifier;
 + (void) sendAdvertisingIdentifier:(BOOL)state;
+#endif
+
+#ifdef TAPAD_IDENTIFIER_ENABLE_IDENTIFIER_FOR_VENDOR
++ (BOOL) willSendIdentifierForVendor;
++ (void) sendIdentifierForVendor:(BOOL)state;
 #endif
 
 + (NSString*) deviceID;

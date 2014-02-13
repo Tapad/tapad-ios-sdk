@@ -39,6 +39,10 @@
 +(NSString*) fetchAdvertisingIdentifier;
 #endif
 
+#ifdef TAPAD_IDENTIFIER_ENABLE_IDENTIFIER_FOR_VENDOR
++(NSString*) fetchIdentifierForVendor;
+#endif
+
 +(NSString*) defaultDeviceID;
 @end
 
@@ -202,6 +206,34 @@ static NSString* kTYPE_ADVERTISING_IDENTIFIER = @"7";
 }
 #endif
 
+#ifdef TAPAD_IDENTIFIER_ENABLE_IDENTIFIER_FOR_VENDOR
+static NSString* kMETHOD_IDENTIFIER_FOR_VENDOR = @"Identifier For Vendor";
+static NSString* kTYPE_IDENTIFIER_FOR_VENDOR = @"10";
+
++ (BOOL) willSendIdentifierForVendor {
+    return [TapadPreferences willSendIdFor:kMETHOD_IDENTIFIER_FOR_VENDOR];
+}
+
++ (void) sendIdentifierForVendor:(BOOL)state {
+    [TapadPreferences setSendIdFor:kMETHOD_IDENTIFIER_FOR_VENDOR to:state];
+}
+
++ (NSString*) fetchIdentifierForVendor {
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"6.0")) {
+        if ([[UIDevice currentDevice] identifierForVendor] == nil) {
+            return [NSString stringWithFormat:@"%@:%@", kTYPE_IDENTIFIER_FOR_VENDOR, @"0"];
+        }
+        else {
+            return [NSString stringWithFormat:@"%@:%@", kTYPE_IDENTIFIER_FOR_VENDOR, [[[UIDevice currentDevice] identifierForVendor] UUIDString]];
+        }
+        
+    }
+    else {
+        return [NSString stringWithFormat:@"%@:%@", kTYPE_IDENTIFIER_FOR_VENDOR, @"0"];
+    }
+}
+#endif
+
 + (NSString*) deviceID {
     NSMutableArray* ids = [NSMutableArray arrayWithCapacity:7]; // autoreleased
 
@@ -238,6 +270,12 @@ static NSString* kTYPE_ADVERTISING_IDENTIFIER = @"7";
 #ifdef TAPAD_IDENTIFIER_ENABLE_ADVERTISING_IDENTIFIER
     if ([TapadIdentifiers willSendAdvertisingIdentifier]) {
         [ids addObject:[TapadIdentifiers fetchAdvertisingIdentifier]];
+    }
+#endif
+
+#ifdef TAPAD_IDENTIFIER_ENABLE_IDENTIFIER_FOR_VENDOR
+    if ([TapadIdentifiers willSendIdentifierForVendor]) {
+        [ids addObject:[TapadIdentifiers fetchIdentifierForVendor]];
     }
 #endif
 

@@ -24,6 +24,7 @@
 - (void) testEventWithMD5HashedMAC;
 - (void) testEventWithSHA1HashedMAC;
 - (void) testEventWithAdvertisingIdentifier;
+- (void) testEventWithIdentifierForVendor;
 - (void) testEventWithAllIdentifiers;
 - (void) testEventWithAllIdentifiersAndExtraParams;
 
